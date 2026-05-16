@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>TA HomeX Staff Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-bright": "#faf9fd",
+                    "tertiary-fixed": "#ffdbcb",
+                    "on-secondary-fixed": "#261900",
+                    "tertiary": "#1e0700",
+                    "on-secondary-container": "#785a1a",
+                    "tertiary-fixed-dim": "#ffb692",
+                    "secondary": "#775a19",
+                    "outline-variant": "#c4c6cf",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-dark": "#0A111F",
+                    "surface-container-low": "#f4f3f7",
+                    "on-error-container": "#93000a",
+                    "on-primary": "#ffffff",
+                    "error-container": "#ffdad6",
+                    "on-tertiary-container": "#bc7b5a",
+                    "on-primary-fixed": "#001b3c",
+                    "primary-container": "#002349",
+                    "surface-container-highest": "#e3e2e6",
+                    "surface-tint": "#455f88",
+                    "on-tertiary": "#ffffff",
+                    "surface-container-high": "#e9e7eb",
+                    "on-tertiary-fixed-variant": "#6c391e",
+                    "tertiary-container": "#401701",
+                    "error": "#ba1a1a",
+                    "primary-fixed-dim": "#adc8f6",
+                    "on-surface": "#1a1c1e",
+                    "on-background": "#1a1c1e",
+                    "outline": "#74777f",
+                    "primary-fixed": "#d5e3ff",
+                    "deep-navy": "#002349",
+                    "inverse-primary": "#adc8f6",
+                    "primary": "#000d22",
+                    "on-secondary": "#ffffff",
+                    "on-error": "#ffffff",
+                    "antique-gold": "#C5A059",
+                    "warning-amber": "#F2994A",
+                    "on-secondary-fixed-variant": "#5d4201",
+                    "secondary-fixed": "#ffdea5",
+                    "surface-variant": "#e3e2e6",
+                    "on-tertiary-fixed": "#341100",
+                    "secondary-container": "#fed488",
+                    "background": "#faf9fd",
+                    "surface-container": "#eeedf1",
+                    "secondary-fixed-dim": "#e9c176",
+                    "inverse-surface": "#2f3033",
+                    "on-primary-fixed-variant": "#2c476f",
+                    "inverse-on-surface": "#f1f0f4",
+                    "surface": "#faf9fd",
+                    "surface-dim": "#dad9dd",
+                    "on-primary-container": "#718bb7",
+                    "success-green": "#27AE60",
+                    "on-surface-variant": "#43474e"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "stack-sm": "8px",
+                    "gutter": "16px",
+                    "margin-desktop": "32px",
+                    "stack-lg": "24px",
+                    "margin-mobile": "16px",
+                    "base": "8px",
+                    "stack-md": "16px"
+            },
+            "fontFamily": {
+                    "headline-md": ["Manrope"],
+                    "label-lg": ["Manrope"],
+                    "display-lg": ["Manrope"],
+                    "body-sm": ["Manrope"],
+                    "body-md": ["Manrope"],
+                    "label-sm": ["Manrope"],
+                    "headline-lg": ["Manrope"],
+                    "body-lg": ["Manrope"],
+                    "headline-sm": ["Manrope"]
+            },
+            "fontSize": {
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "label-lg": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                    "display-lg": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.04em", "fontWeight": "500"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "headline-sm": ["20px", {"lineHeight": "28px", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        .bg-glass {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface-bright text-on-surface font-body-md min-h-screen pb-24 md:pb-0 md:pt-16">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full bg-surface-bright dark:bg-surface-dark shadow-sm flex justify-between items-center px-4 h-16 w-full z-50 transition-colors duration-200 ease-in-out">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full overflow-hidden border-2 border-antique-gold">
+<img alt="Marcus Vane" class="w-full h-full object-cover" data-alt="A professional headshot of a refined man in his late 30s wearing a tailored charcoal suit and a crisp white shirt. He has a confident, warm expression and is set against a blurred, high-end corporate office background with soft bokeh. The lighting is sophisticated and directional, emphasizing his features with a modern, professional polish." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA3YZDmp1eZKiLo_Zv3Tg6InhZ15foyXjY4Zn8whpt8EYDM4VL0TTqh-YS37K0gFnf2SOGa6XZKaIVmy-kXLl4UoSrouaydp7yXjb-HpE7erpIX4Nc7pgXXz2YZCDGUZIlrCfKFmblw5CO8-pJEEFJNYomDdUtpPD9TnJFnRxOxl7BcLDHqBFLIgh8dG1B-HTPcjRiG-p_REFggHm1ZuqYdZzoSIWpgrn-Q67LlLPSr1UV4LIKPftsHSbs_y7PZoU5KuQ9LnZ4_IAo"/>
+</div>
+<span class="font-headline-md text-headline-md font-bold text-deep-navy dark:text-primary-fixed">Operational Portal</span>
+</div>
+<div class="flex items-center gap-4">
+<button class="material-symbols-outlined text-primary dark:text-primary-fixed-dim hover:bg-surface-container-high dark:hover:bg-surface-container-highest p-2 rounded-full transition-colors">notifications</button>
+</div>
+</header>
+<main class="max-w-7xl mx-auto px-4 pt-6 md:pt-10 flex flex-col gap-stack-lg pb-10">
+<!-- Welcome Section -->
+<section class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+<div>
+<h1 class="font-display-lg text-display-lg text-deep-navy">Welcome back, Marcus</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant">Here is your operational overview for Today, Oct 24.</p>
+</div>
+<div class="flex gap-3">
+<button class="bg-antique-gold text-deep-navy px-6 py-3 rounded-lg font-label-lg flex items-center gap-2 shadow-sm active:scale-95 transition-transform">
+<span class="material-symbols-outlined">add</span>
+                    New Task
+                </button>
+</div>
+</section>
+<!-- Bento Summary Grid -->
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter">
+<!-- Total Tasks -->
+<div class="md:col-span-1 bg-surface-container-lowest p-6 rounded-xl border border-outline-variant shadow-[0_4px_20px_rgba(0,0,0,0.04)]">
+<div class="flex justify-between items-start mb-4">
+<div class="p-3 bg-primary-container rounded-lg">
+<span class="material-symbols-outlined text-antique-gold">assignment</span>
+</div>
+<span class="font-label-sm text-success-green">+4 from yesterday</span>
+</div>
+<p class="font-label-lg text-on-surface-variant uppercase tracking-wider">Total Tasks</p>
+<p class="font-display-lg text-display-lg text-deep-navy">24</p>
+</div>
+<!-- Check-ins/outs -->
+<div class="md:col-span-2 bg-deep-navy p-6 rounded-xl shadow-xl flex flex-col justify-between text-white relative overflow-hidden">
+<div class="relative z-10">
+<p class="font-headline-sm text-headline-sm text-antique-gold mb-6">Arrivals &amp; Departures</p>
+<div class="flex gap-12">
+<div class="flex flex-col">
+<span class="font-label-sm text-primary-fixed opacity-80">Pending Check-ins</span>
+<span class="font-display-lg text-display-lg">12</span>
+</div>
+<div class="w-px h-16 bg-white/10"></div>
+<div class="flex flex-col">
+<span class="font-label-sm text-primary-fixed opacity-80">Pending Check-outs</span>
+<span class="font-display-lg text-display-lg">08</span>
+</div>
+</div>
+</div>
+<!-- Abstract visual element -->
+<div class="absolute right-[-20px] bottom-[-20px] w-40 h-40 border-[16px] border-white/5 rounded-full"></div>
+</div>
+<!-- Urgent Alerts -->
+<div class="md:col-span-1 bg-error-container p-6 rounded-xl border border-error/20 shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex items-center gap-2 mb-4">
+<span class="material-symbols-outlined text-error">warning</span>
+<span class="font-label-lg text-error font-bold uppercase tracking-tight">Urgent Alerts</span>
+</div>
+<p class="font-headline-md text-headline-md text-on-error-container">03</p>
+<p class="font-body-sm text-on-error-container mt-1">Maintenance issues require immediate action.</p>
+</div>
+<button class="mt-4 text-error font-label-lg flex items-center gap-1 hover:underline">
+                    View Alerts <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Tasks at a glance & Progress Section -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-stack-lg">
+<!-- Workload Progress Rings -->
+<div class="lg:col-span-1 bg-surface-container-lowest p-6 rounded-xl border border-outline-variant">
+<h3 class="font-headline-sm text-headline-sm text-deep-navy mb-8">Tasks at a glance</h3>
+<div class="flex flex-col gap-8 items-center py-4">
+<!-- Progress Ring Housekeeping -->
+<div class="relative w-40 h-40 flex items-center justify-center">
+<svg class="w-full h-full -rotate-90">
+<circle class="text-surface-container-high" cx="80" cy="80" fill="transparent" r="70" stroke="currentColor" stroke-width="12"></circle>
+<circle class="text-antique-gold" cx="80" cy="80" fill="transparent" r="70" stroke="currentColor" stroke-dasharray="440" stroke-dashoffset="110" stroke-width="12"></circle>
+</svg>
+<div class="absolute flex flex-col items-center">
+<span class="font-display-lg text-[32px] text-deep-navy">75%</span>
+<span class="font-label-sm text-on-surface-variant">Housekeeping</span>
+</div>
+</div>
+<div class="w-full grid grid-cols-2 gap-4">
+<div class="bg-surface-bright p-4 rounded-lg text-center">
+<p class="font-label-sm text-on-surface-variant">Maintenance</p>
+<div class="w-full h-2 bg-surface-container-high rounded-full mt-2 overflow-hidden">
+<div class="bg-deep-navy h-full w-[45%]"></div>
+</div>
+<p class="font-label-lg text-deep-navy mt-1">45%</p>
+</div>
+<div class="bg-surface-bright p-4 rounded-lg text-center">
+<p class="font-label-sm text-on-surface-variant">Concierge</p>
+<div class="w-full h-2 bg-surface-container-high rounded-full mt-2 overflow-hidden">
+<div class="bg-deep-navy h-full w-[90%]"></div>
+</div>
+<p class="font-label-lg text-deep-navy mt-1">90%</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Urgent Maintenance Alerts List -->
+<div class="lg:col-span-2 bg-surface-container-lowest p-6 rounded-xl border border-outline-variant">
+<div class="flex justify-between items-center mb-6">
+<h3 class="font-headline-sm text-headline-sm text-deep-navy">Urgent Maintenance</h3>
+<button class="text-antique-gold font-label-lg hover:underline">View All Schedule</button>
+</div>
+<div class="flex flex-col gap-4">
+<!-- Maintenance Item -->
+<div class="flex items-center gap-4 p-4 rounded-xl hover:bg-surface-bright transition-colors border-l-4 border-error group cursor-pointer">
+<div class="w-12 h-12 rounded-lg bg-error-container/30 flex items-center justify-center text-error">
+<span class="material-symbols-outlined">water_drop</span>
+</div>
+<div class="flex-1">
+<h4 class="font-headline-sm text-body-lg text-deep-navy">Unit 402: Active Water Leak</h4>
+<p class="font-body-sm text-on-surface-variant">Master bathroom, ceiling drip reported by guest.</p>
+</div>
+<div class="text-right flex flex-col items-end gap-1">
+<span class="bg-error/10 text-error px-2 py-1 rounded text-label-sm font-bold uppercase tracking-tight">Critical</span>
+<span class="text-label-sm text-on-surface-variant">Reported 12m ago</span>
+</div>
+</div>
+<div class="flex items-center gap-4 p-4 rounded-xl hover:bg-surface-bright transition-colors border-l-4 border-warning-amber group cursor-pointer">
+<div class="w-12 h-12 rounded-lg bg-secondary-container/30 flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined">bolt</span>
+</div>
+<div class="flex-1">
+<h4 class="font-headline-sm text-body-lg text-deep-navy">Unit 115: Smart Lock Offline</h4>
+<p class="font-body-sm text-on-surface-variant">Front door battery critical, connectivity lost.</p>
+</div>
+<div class="text-right flex flex-col items-end gap-1">
+<span class="bg-warning-amber/10 text-warning-amber px-2 py-1 rounded text-label-sm font-bold uppercase tracking-tight">Warning</span>
+<span class="text-label-sm text-on-surface-variant">Reported 45m ago</span>
+</div>
+</div>
+<div class="flex items-center gap-4 p-4 rounded-xl hover:bg-surface-bright transition-colors border-l-4 border-deep-navy group cursor-pointer">
+<div class="w-12 h-12 rounded-lg bg-primary-container/10 flex items-center justify-center text-deep-navy">
+<span class="material-symbols-outlined">ac_unit</span>
+</div>
+<div class="flex-1">
+<h4 class="font-headline-sm text-body-lg text-deep-navy">Unit 309: HVAC Filter Replacement</h4>
+<p class="font-body-sm text-on-surface-variant">Scheduled maintenance due for quarterly check.</p>
+</div>
+<div class="text-right flex flex-col items-end gap-1">
+<span class="bg-surface-container-highest text-on-surface-variant px-2 py-1 rounded text-label-sm font-bold uppercase tracking-tight">Scheduled</span>
+<span class="text-label-sm text-on-surface-variant">Due Today</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Featured Staff Insights / Activity -->
+<section class="bg-surface-container-low rounded-2xl p-8 relative overflow-hidden">
+<div class="relative z-10 md:w-2/3">
+<span class="font-label-lg text-antique-gold uppercase tracking-widest font-bold mb-2 block">System Pulse</span>
+<h2 class="font-headline-lg text-headline-lg text-deep-navy mb-4">Operations are running at 94% efficiency today.</h2>
+<p class="font-body-md text-on-surface-variant mb-6">Check-ins are moving faster than projected. Recommended: Reassign 2 cleaning staff from East Wing to West Wing by 2 PM to maintain turnaround times.</p>
+<div class="flex gap-4">
+<button class="bg-deep-navy text-white px-6 py-2 rounded-lg font-label-lg shadow hover:bg-opacity-90 transition-all">Optimize Staff</button>
+<button class="border border-outline text-deep-navy px-6 py-2 rounded-lg font-label-lg hover:bg-white transition-all">View Analytics</button>
+</div>
+</div>
+<!-- Decorative image -->
+<div class="absolute right-0 top-0 bottom-0 w-1/3 hidden md:block">
+<img alt="Data Analytics" class="w-full h-full object-cover mix-blend-multiply opacity-20" data-alt="A clean, abstract architectural visualization of digital data flows represented as glowing, semi-transparent light trails across a dark navy glass surface. The design is minimalist and sophisticated, utilizing a palette of deep blues and rich golds to convey high-end technology and data intelligence. Soft gradients and elegant bokeh effects add depth to the modern, corporate aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBAf53p9yf2TAEnj4F9bwr3pJr6-Njjscbfli_HUacRDnkr2gyvN1fCm2yCJAxInpBYJDNnkYD3ncCb9pakV1LOU1wqPTgJ1loRuV0NeNcy5zBlKNeU8wyrgB9CDwaOK_GUrHNGtWhjwlAoBm9RveJajmkFKKNtXz9_HhI_6D5lUb86u9mD7kJLUghzQKalew1riJFeKEBF9R92w0ZJis3S5fYDhtyn-ATCIhL6VVAwbF-xsxpq0XvstQ4DZj8bfK2nbGtG-vzfk4w"/>
+</div>
+</section>
+</main>
+<!-- BottomNavBar (Mobile only) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 py-2 pb-safe bg-surface-bright dark:bg-surface-dark border-t border-outline-variant dark:border-outline shadow-[0_-4px_20px_rgba(0,0,0,0.04)]">
+<a class="flex flex-col items-center justify-center text-deep-navy dark:text-antique-gold font-bold relative after:content-[''] after:absolute after:-bottom-1 after:w-1 after:h-1 after:bg-antique-gold after:rounded-full active:scale-95 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined">assignment</span>
+<span class="font-label-sm text-label-sm">Tasks</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline hover:opacity-80 active:scale-95 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined">calendar_today</span>
+<span class="font-label-sm text-label-sm">Schedule</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline hover:opacity-80 active:scale-95 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined">chat_bubble</span>
+<span class="font-label-sm text-label-sm">Inbox</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline hover:opacity-80 active:scale-95 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="font-label-sm text-label-sm">Profile</span>
+</a>
+</nav>
+<!-- NavigationDrawer (Desktop only) -->
+<aside class="hidden md:flex fixed left-0 top-16 h-[calc(100vh-64px)] w-64 bg-surface-container-low dark:bg-surface-dark border-r border-outline-variant flex-col p-4 gap-stack-md z-40 transition-all duration-300">
+<div class="flex flex-col gap-2 mb-6">
+<a class="flex items-center gap-3 p-3 bg-secondary-container dark:bg-primary-container text-on-secondary-container dark:text-on-primary-container rounded-lg transition-all" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-body-md text-body-md font-bold">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 p-3 text-on-surface-variant dark:text-outline-variant hover:bg-surface-container-highest dark:hover:bg-inverse-surface rounded-lg transition-all" href="#">
+<span class="material-symbols-outlined">build</span>
+<span class="font-body-md text-body-md">Maintenance Log</span>
+</a>
+<a class="flex items-center gap-3 p-3 text-on-surface-variant dark:text-outline-variant hover:bg-surface-container-highest dark:hover:bg-inverse-surface rounded-lg transition-all" href="#">
+<span class="material-symbols-outlined">inventory_2</span>
+<span class="font-body-md text-body-md">Inventory</span>
+</a>
+<a class="flex items-center gap-3 p-3 text-on-surface-variant dark:text-outline-variant hover:bg-surface-container-highest dark:hover:bg-inverse-surface rounded-lg transition-all" href="#">
+<span class="material-symbols-outlined">event_note</span>
+<span class="font-body-md text-body-md">Shift Schedule</span>
+</a>
+<a class="flex items-center gap-3 p-3 text-on-surface-variant dark:text-outline-variant hover:bg-surface-container-highest dark:hover:bg-inverse-surface rounded-lg transition-all" href="#">
+<span class="material-symbols-outlined">emergency</span>
+<span class="font-body-md text-body-md">Emergency Contacts</span>
+</a>
+</div>
+<div class="mt-auto pt-4 border-t border-outline-variant">
+<div class="flex items-center gap-3 p-3">
+<div class="w-10 h-10 bg-deep-navy rounded-full flex items-center justify-center text-antique-gold font-bold">MV</div>
+<div class="overflow-hidden">
+<p class="font-label-lg text-deep-navy truncate">Marcus Vane</p>
+<p class="text-[10px] text-on-surface-variant truncate uppercase tracking-tighter">Lead Operations</p>
+</div>
+</div>
+<a class="flex items-center gap-3 p-3 text-on-surface-variant dark:text-outline-variant hover:bg-surface-container-highest dark:hover:bg-inverse-surface rounded-lg transition-all" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-body-md text-body-md">Settings</span>
+</a>
+</div>
+</aside>
+<style>
+        @media (min-width: 768px) {
+            main {
+                margin-left: 256px;
+            }
+        }
+    </style>
+</body></html>

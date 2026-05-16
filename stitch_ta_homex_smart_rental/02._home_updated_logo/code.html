@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>TA HomeX | Premium Guest Experience</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "warning-amber": "#F2994A",
+                        "on-error-container": "#93000a",
+                        "surface-bright": "#faf9fd",
+                        "on-secondary-container": "#785a1a",
+                        "on-secondary": "#ffffff",
+                        "tertiary-fixed-dim": "#ffb692",
+                        "error": "#ba1a1a",
+                        "inverse-primary": "#adc8f6",
+                        "outline-variant": "#c4c6cf",
+                        "tertiary": "#1e0700",
+                        "on-tertiary": "#ffffff",
+                        "on-background": "#1a1c1e",
+                        "success-green": "#27AE60",
+                        "on-primary-fixed": "#001b3c",
+                        "inverse-on-surface": "#f1f0f4",
+                        "surface-dark": "#0A111F",
+                        "surface-tint": "#455f88",
+                        "primary-fixed-dim": "#adc8f6",
+                        "inverse-surface": "#2f3033",
+                        "antique-gold": "#C5A059",
+                        "surface-dim": "#dad9dd",
+                        "primary": "#000d22",
+                        "on-tertiary-fixed-variant": "#6c391e",
+                        "secondary-fixed-dim": "#e9c176",
+                        "secondary-fixed": "#ffdea5",
+                        "secondary-container": "#fed488",
+                        "outline": "#74777f",
+                        "on-error": "#ffffff",
+                        "on-surface-variant": "#43474e",
+                        "on-primary-fixed-variant": "#2c476f",
+                        "on-surface": "#1a1c1e",
+                        "deep-navy": "#002349",
+                        "on-secondary-fixed-variant": "#5d4201",
+                        "on-secondary-fixed": "#261900",
+                        "on-primary-container": "#718bb7",
+                        "primary-container": "#002349",
+                        "surface-container-low": "#f4f3f7",
+                        "tertiary-fixed": "#ffdbcb",
+                        "secondary": "#775a19",
+                        "on-primary": "#ffffff",
+                        "primary-fixed": "#d5e3ff",
+                        "tertiary-container": "#401701",
+                        "on-tertiary-container": "#bc7b5a",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container-high": "#e9e7eb",
+                        "surface": "#faf9fd",
+                        "surface-container": "#eeedf1",
+                        "background": "#faf9fd",
+                        "on-tertiary-fixed": "#341100",
+                        "surface-container-highest": "#e3e2e6",
+                        "surface-variant": "#e3e2e6",
+                        "error-container": "#ffdad6"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "base": "8px",
+                        "margin-desktop": "32px",
+                        "stack-lg": "24px",
+                        "gutter": "16px",
+                        "stack-sm": "8px",
+                        "stack-md": "16px",
+                        "margin-mobile": "16px"
+                    },
+                    "fontFamily": {
+                        "label-lg": ["Manrope"],
+                        "body-md": ["Manrope"],
+                        "headline-lg": ["Manrope"],
+                        "display-lg": ["Manrope"],
+                        "body-sm": ["Manrope"],
+                        "headline-md": ["Manrope"],
+                        "headline-sm": ["Manrope"],
+                        "body-lg": ["Manrope"],
+                        "label-sm": ["Manrope"]
+                    },
+                    "fontSize": {
+                        "label-lg": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                        "display-lg": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                        "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "headline-sm": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.04em", "fontWeight": "500"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Manrope', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="bg-surface text-on-surface">
+<!-- TopAppBar -->
+<header class="bg-surface dark:bg-surface-dark flex justify-between items-center px-margin-mobile h-20 w-full sticky top-0 z-50 shadow-sm">
+<div class="w-10 h-10 rounded-full bg-surface-container-high overflow-hidden flex-shrink-0">
+<img alt="User Profile" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAv9w9xjm16-ssw_5iH5LStPv26pl-eKi8p9Bj9nNsvfu6eyss1KkrKda9iV_FYg1-ZVfLeNnJzh5Y0FkyAmHDZXdDYanjHC5hkSziGOLOm6p6AqrSgw4yCPJzrWYri5KGYQiJZdMI-cZfcp7R391xB2z11FjWindahUEdz6JhqA8UOccdEEG0H8IwMYroYxpYzZUn9yHv-_-lnPV81HqHwiO2BubrLYdXkQ7IP34IRxF8tfZwQlblozNSqIEn0OhMnJLWZkZ6R4Dw"/>
+</div>
+<div class="flex-1 flex justify-center">
+<img alt="TA HomeX Logo" class="h-12 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCH4vQvEeWhiWd3ysQThYAeeaKyThfmlEjTcS3vD-xv574_T4_7vi_Ai4w_nYQm1xwTsqkSE7Nbd_hZi4O8MzMGAzD2eex07irjI5Ay7_WiyLUW-irNOAS-Z0jDE6rT9sEno71TgmcwSmnwgimbI29VIO0bnRiYVtXZEnycF2hZhscQ8Rt2-VK8Xaaq2wnoNpFzxCB8riiyfmzOvAtdBYZZov7OUOv9ht-nk7VW8eQ89TW1TMSRlegRwNeV3yneYjmgyHGyWvW7IIE"/>
+</div>
+<div class="flex items-center gap-2 flex-shrink-0">
+<button class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-surface-container-low transition-colors">
+<span class="material-symbols-outlined text-primary">notifications</span>
+</button>
+</div>
+</header>
+<main class="pb-24">
+<!-- Search Bar Section -->
+<section class="px-margin-mobile mt-4">
+<div class="relative group">
+<div class="absolute inset-y-0 left-4 flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-outline">search</span>
+</div>
+<input class="w-full h-14 pl-12 pr-4 bg-white border border-outline-variant rounded-xl focus:ring-2 focus:ring-antique-gold focus:border-antique-gold transition-all shadow-sm font-body-md text-body-md" placeholder="Where do you want to go?" type="text"/>
+</div>
+</section>
+<!-- Hero Promo -->
+<section class="px-margin-mobile mt-stack-lg">
+<div class="relative h-44 rounded-2xl overflow-hidden shadow-lg group">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A breathtaking view of a modern luxury penthouse interior overlooking a neon-lit city skyline at night through massive floor-to-ceiling windows. The room is elegantly furnished with plush velvet seating and minimalist gold accents. Soft, warm ambient lighting creates a mood of exclusive serenity and high-tech luxury. The composition is wide and cinematic, showcasing an elite residential experience." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAzq36EQ65bZUEN1wIFEEt2zE1xmOa3p-V4UYDIbOleAdPGQ2PecsjHSz9QKtEnGT7Hx8vDsyUczAmXeSyeSft6uKeGa5q3z3rjL8v8aYhCDNo6OHkpj9le1KD8b_XnzYE-TOhvOz-UbReWCuMe7MECVUBzujSjJV6PeBy_Sfkko_2sSgUhd7DTs23ijArxmu7gAxxpYdzu7NNlV2ahh70aIcB-Kg-f-XpSASpkdOgWVhPskVPezVbSgIe86lOwVjx9vDLr1615O4w"/>
+<div class="absolute inset-0 bg-gradient-to-r from-deep-navy/80 to-transparent flex flex-col justify-center px-6">
+<h2 class="font-display-lg text-headline-sm text-white mb-1 uppercase tracking-wider">LIVE SMART</h2>
+<p class="font-headline-md text-headline-md text-antique-gold">STAY LUXURY</p>
+</div>
+</div>
+</section>
+<!-- Categories -->
+<section class="mt-stack-lg overflow-x-auto hide-scrollbar">
+<div class="flex gap-4 px-margin-mobile pb-2">
+<div class="flex flex-col items-center gap-2 group cursor-pointer">
+<div class="w-16 h-16 rounded-2xl bg-antique-gold text-white flex items-center justify-center shadow-md shadow-antique-gold/20 active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-3xl">apartment</span>
+</div>
+<span class="font-label-lg text-label-lg text-deep-navy">Apartment</span>
+</div>
+<div class="flex flex-col items-center gap-2 group cursor-pointer">
+<div class="w-16 h-16 rounded-2xl bg-white text-on-surface-variant flex items-center justify-center border border-outline-variant hover:border-antique-gold hover:text-antique-gold active:scale-95 transition-all">
+<span class="material-symbols-outlined text-3xl">Radio</span>
+</div>
+<span class="font-label-lg text-label-lg text-on-surface-variant">Studio</span>
+</div>
+<div class="flex flex-col items-center gap-2 group cursor-pointer">
+<div class="w-16 h-16 rounded-2xl bg-white text-on-surface-variant flex items-center justify-center border border-outline-variant hover:border-antique-gold hover:text-antique-gold active:scale-95 transition-all">
+<span class="material-symbols-outlined text-3xl">house</span>
+</div>
+<span class="font-label-lg text-label-lg text-on-surface-variant">House</span>
+</div>
+<div class="flex flex-col items-center gap-2 group cursor-pointer">
+<div class="w-16 h-16 rounded-2xl bg-white text-on-surface-variant flex items-center justify-center border border-outline-variant hover:border-antique-gold hover:text-antique-gold active:scale-95 transition-all">
+<span class="material-symbols-outlined text-3xl">villa</span>
+</div>
+<span class="font-label-lg text-label-lg text-on-surface-variant">Villa</span>
+</div>
+<div class="flex flex-col items-center gap-2 group cursor-pointer">
+<div class="w-16 h-16 rounded-2xl bg-white text-on-surface-variant flex items-center justify-center border border-outline-variant hover:border-antique-gold hover:text-antique-gold active:scale-95 transition-all">
+<span class="material-symbols-outlined text-3xl">deck</span>
+</div>
+<span class="font-label-lg text-label-lg text-on-surface-variant">Resort</span>
+</div>
+</div>
+</section>
+<!-- Top Picks -->
+<section class="mt-stack-lg">
+<div class="flex justify-between items-end px-margin-mobile mb-4">
+<h3 class="font-headline-md text-headline-md text-deep-navy">Top Picks for you</h3>
+<button class="font-label-lg text-label-lg text-antique-gold">View all</button>
+</div>
+<div class="flex gap-4 overflow-x-auto hide-scrollbar px-margin-mobile pb-4">
+<!-- Card 1 -->
+<div class="min-w-[280px] bg-white rounded-2xl overflow-hidden shadow-sm border border-outline-variant/30 flex-shrink-0">
+<div class="relative h-40">
+<img class="w-full h-full object-cover" data-alt="A modern minimalist apartment living room with expansive floor-to-ceiling windows showing a panoramic city skyline view. The interior features a neutral color palette of cream and gray with sophisticated lighting and high-end wooden flooring. The atmosphere is quiet, luxurious, and perfectly ordered, evoking a sense of high-class urban living. Soft morning light fills the space." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBA3uDbqEdShUXUAM7E7MHmooUKXTXF9_kMh5z8xmvriRyOzhhhMIsBo232u6cGpoXb3SmqlXkUBtTMaKadPzLbfd1qNYtFxWo6cZlFj_VSw9rl5ChF9owjeiSbVA0363t58VOzRZxd6_aREhClMSq_LApXYuFO9rqH4PB9jcnugvTt6Ll9KNTY49pvNFwVXe9-eGSJm-9qDN9-o2WtmHIgzwBw0kIUoyV3Zt8-IXTFcXCPOV8oZKW6ZvvLMZXcdFp-9Quy34iqc4Y"/>
+<button class="absolute top-3 right-3 w-8 h-8 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center text-white">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">favorite</span>
+</button>
+</div>
+<div class="p-4">
+<div class="flex justify-between items-start mb-1">
+<h4 class="font-headline-sm text-headline-sm text-deep-navy">TA HomeX Rivergate</h4>
+<div class="flex items-center gap-1 text-antique-gold">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-label-lg text-label-lg">4.9</span>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-3">District 4, HCMC</p>
+<div class="flex items-center justify-between">
+<p class="font-label-lg text-label-lg text-deep-navy">From <span class="text-antique-gold font-bold">1.200.000 VND</span> / night</p>
+</div>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="min-w-[280px] bg-white rounded-2xl overflow-hidden shadow-sm border border-outline-variant/30 flex-shrink-0">
+<div class="relative h-40">
+<img class="w-full h-full object-cover" data-alt="A luxury bedroom suite in a high-rise building with a stunning view of a modern city bridge and river at dusk. The room is decorated in a contemporary style with dark wood, premium fabrics, and subtle accent lighting. The mood is intimate and prestigious. Gold and navy tones are subtly integrated into the decor to match the brand's aesthetic. High clarity and professional architectural photography style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA077qdDK4xuscU9mYouuZ89Y2nU6byuxbDHl8W2wkVyG5-AdOIQzbOzHojjqGxzTpFES0p7nZcJi4hRJo-09FXerAcAPV_PBww89Emd03hIjOpol5JwQfiEF8Oob3jzo6phy4A8aS9LbToQ1U_tjb8GFhCJPFtwcMiyyvKKax_3X4OkNXfX65qOQEwSi-4R_rBad1SZexRDedgMcJ8MBomU6inzqUEiMldKcLMt2FeMUtN5mK5f_feHKiGnuO27YW4GrYxuyrHiUE"/>
+<button class="absolute top-3 right-3 w-8 h-8 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center text-white">
+<span class="material-symbols-outlined text-[20px]">favorite</span>
+</button>
+</div>
+<div class="p-4">
+<div class="flex justify-between items-start mb-1">
+<h4 class="font-headline-sm text-headline-sm text-deep-navy">TA HomeX Landmark</h4>
+<div class="flex items-center gap-1 text-antique-gold">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-label-lg text-label-lg">4.8</span>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-3">Binh Thanh, HCMC</p>
+<div class="flex items-center justify-between">
+<p class="font-label-lg text-label-lg text-deep-navy">From <span class="text-antique-gold font-bold">1.500.000 VND</span> / night</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Best Amenities -->
+<section class="mt-stack-lg px-margin-mobile">
+<h3 class="font-headline-md text-headline-md text-deep-navy mb-4">Best Amenities</h3>
+<div class="grid grid-cols-4 gap-4">
+<div class="flex flex-col items-center gap-2">
+<div class="w-full aspect-square rounded-xl bg-surface-container-low flex items-center justify-center text-deep-navy">
+<span class="material-symbols-outlined text-2xl">door_front</span>
+</div>
+<span class="font-label-sm text-label-sm text-center text-on-surface-variant leading-tight">Smart Check-in</span>
+</div>
+<div class="flex flex-col items-center gap-2">
+<div class="w-full aspect-square rounded-xl bg-surface-container-low flex items-center justify-center text-deep-navy">
+<span class="material-symbols-outlined text-2xl">home_iot_device</span>
+</div>
+<span class="font-label-sm text-label-sm text-center text-on-surface-variant leading-tight">Smart Home</span>
+</div>
+<div class="flex flex-col items-center gap-2">
+<div class="w-full aspect-square rounded-xl bg-surface-container-low flex items-center justify-center text-deep-navy">
+<span class="material-symbols-outlined text-2xl">wifi</span>
+</div>
+<span class="font-label-sm text-label-sm text-center text-on-surface-variant leading-tight">High-speed WiFi</span>
+</div>
+<div class="flex flex-col items-center gap-2">
+<div class="w-full aspect-square rounded-xl bg-surface-container-low flex items-center justify-center text-deep-navy">
+<span class="material-symbols-outlined text-2xl">cleaning_services</span>
+</div>
+<span class="font-label-sm text-label-sm text-center text-on-surface-variant leading-tight">Cleaning Service</span>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-safe h-20 bg-surface/90 dark:bg-surface-dark/90 backdrop-blur-md rounded-t-xl shadow-lg border-t border-outline-variant/30">
+<!-- Home (Active) -->
+<a class="flex flex-col items-center justify-center text-deep-navy dark:text-antique-gold relative after:content-[''] after:w-1 after:h-1 after:bg-antique-gold after:rounded-full after:mt-1 scale-90 transition-all duration-200 ease-out" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">home</span>
+<span class="font-label-sm text-label-sm-mobile mt-1">Home</span>
+</a>
+<!-- Search -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-primary-fixed-dim transition-all" href="#">
+<span class="material-symbols-outlined">search</span>
+<span class="font-label-sm text-label-sm-mobile mt-1">Search</span>
+</a>
+<!-- Bookings -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-primary-fixed-dim transition-all" href="#">
+<span class="material-symbols-outlined">calendar_month</span>
+<span class="font-label-sm text-label-sm-mobile mt-1">Bookings</span>
+</a>
+<!-- Inbox -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-primary-fixed-dim transition-all" href="#">
+<div class="relative">
+<span class="material-symbols-outlined">chat_bubble</span>
+<span class="absolute -top-1 -right-1 w-2 h-2 bg-error rounded-full"></span>
+</div>
+<span class="font-label-sm text-label-sm-mobile mt-1">Inbox</span>
+</a>
+<!-- Profile -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-primary-fixed-dim transition-all" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="font-label-sm text-label-sm-mobile mt-1">Profile</span>
+</a>
+</nav>
+</body></html>

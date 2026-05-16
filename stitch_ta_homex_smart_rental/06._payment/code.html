@@ -1,0 +1,301 @@
+<!DOCTYPE html><html class="light" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>TA HomeX | Secure Payment</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "background": "#faf9fd",
+                        "outline-variant": "#c4c6cf",
+                        "on-tertiary-fixed-variant": "#6c391e",
+                        "on-surface-variant": "#43474e",
+                        "deep-navy": "#002349",
+                        "surface-container": "#eeedf1",
+                        "tertiary-fixed": "#ffdbcb",
+                        "on-primary-fixed-variant": "#2c476f",
+                        "secondary-fixed-dim": "#e9c176",
+                        "surface-container-high": "#e9e7eb",
+                        "on-error": "#ffffff",
+                        "surface-dark": "#0A111F",
+                        "surface-bright": "#faf9fd",
+                        "surface-container-low": "#f4f3f7",
+                        "surface": "#faf9fd",
+                        "surface-tint": "#455f88",
+                        "primary-fixed-dim": "#adc8f6",
+                        "warning-amber": "#F2994A",
+                        "secondary": "#775a19",
+                        "surface-container-lowest": "#ffffff",
+                        "on-surface": "#1a1c1e",
+                        "surface-container-highest": "#e3e2e6",
+                        "on-secondary-fixed-variant": "#5d4201",
+                        "secondary-container": "#fed488",
+                        "primary": "#000d22",
+                        "on-tertiary-fixed": "#341100",
+                        "inverse-primary": "#adc8f6",
+                        "surface-variant": "#e3e2e6",
+                        "on-tertiary": "#ffffff",
+                        "on-secondary-container": "#785a1a",
+                        "primary-fixed": "#d5e3ff",
+                        "antique-gold": "#C5A059",
+                        "on-secondary-fixed": "#261900",
+                        "on-primary": "#ffffff",
+                        "tertiary-fixed-dim": "#ffb692",
+                        "inverse-on-surface": "#f1f0f4",
+                        "on-background": "#1a1c1e",
+                        "surface-dim": "#dad9dd",
+                        "on-primary-container": "#718bb7",
+                        "tertiary": "#1e0700",
+                        "primary-container": "#002349",
+                        "on-error-container": "#93000a",
+                        "error": "#ba1a1a",
+                        "on-secondary": "#ffffff",
+                        "on-primary-fixed": "#001b3c",
+                        "secondary-fixed": "#ffdea5",
+                        "inverse-surface": "#2f3033",
+                        "success-green": "#27AE60",
+                        "outline": "#74777f",
+                        "error-container": "#ffdad6",
+                        "on-tertiary-container": "#bc7b5a",
+                        "tertiary-container": "#401701"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-desktop": "32px",
+                        "base": "8px",
+                        "stack-md": "16px",
+                        "stack-lg": "24px",
+                        "gutter": "16px",
+                        "stack-sm": "8px",
+                        "margin-mobile": "16px"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["Manrope"],
+                        "label-lg": ["Manrope"],
+                        "headline-sm": ["Manrope"],
+                        "display-lg": ["Manrope"],
+                        "headline-lg": ["Manrope"],
+                        "label-sm": ["Manrope"],
+                        "headline-md": ["Manrope"],
+                        "body-sm": ["Manrope"],
+                        "body-md": ["Manrope"]
+                    },
+                    "fontSize": {
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "label-lg": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                        "headline-sm": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                        "display-lg": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                        "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.04em", "fontWeight": "500"}],
+                        "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .active-selection {
+            border-color: #C5A059 !important;
+            background-color: rgba(197, 160, 89, 0.05);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md selection:bg-antique-gold/30">
+<!-- Top Navigation Bar -->
+<header class="bg-surface sticky top-0 z-50 flex justify-between items-center px-margin-mobile md:px-margin-desktop h-16 w-full">
+<div class="flex items-center gap-4">
+<button class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-surface-container-low transition-colors">
+<span class="material-symbols-outlined text-deep-navy">arrow_back</span>
+</button>
+
+</div>
+<div class="hidden md:flex gap-8 items-center">
+<nav class="flex gap-6">
+<a class="font-label-lg text-label-lg text-on-surface-variant hover:text-primary" href="#">Home</a>
+<a class="font-label-lg text-label-lg text-on-surface-variant hover:text-primary" href="#">Explore</a>
+<a class="font-label-lg text-label-lg text-primary font-bold" href="#">Payment</a>
+</nav>
+<div class="w-10 h-10 rounded-full overflow-hidden border-2 border-antique-gold">
+<div class="w-full h-full bg-surface-container-highest flex items-center justify-center">
+<span class="material-symbols-outlined text-outline">person</span>
+</div>
+</div>
+</div>
+</header>
+<main class="max-w-[1280px] mx-auto px-margin-mobile md:px-margin-desktop pt-stack-lg pb-32">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+<!-- Left Column: Payment Methods -->
+<div class="lg:col-span-7 space-y-stack-lg">
+<div>
+<h1 class="font-headline-lg text-headline-lg text-deep-navy mb-2">Secure Checkout</h1>
+<p class="font-body-md text-body-md text-on-surface-variant">Choose your preferred payment method to complete your booking.</p>
+</div>
+<!-- Payment Option: Card -->
+<section class="bg-surface-container-lowest p-6 rounded-xl border border-outline-variant/30 shadow-sm active-selection">
+<div class="flex items-center justify-between mb-6">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-antique-gold" style="font-variation-settings: 'FILL' 1;">credit_card</span>
+<h3 class="font-headline-sm text-headline-sm">Credit / Debit Card</h3>
+</div>
+<div class="flex gap-2">
+<span class="material-symbols-outlined text-on-surface-variant opacity-60">payments</span>
+</div>
+</div>
+<form class="space-y-4">
+<div class="grid grid-cols-1 gap-4">
+<div class="relative">
+<label class="absolute -top-2 left-3 px-1 bg-surface-container-lowest text-xs font-semibold text-antique-gold">Card Number</label>
+<input class="w-full h-12 border border-outline px-4 rounded-lg focus:ring-1 focus:ring-antique-gold focus:border-antique-gold outline-none" placeholder="0000 0000 0000 0000" type="text">
+<div class="absolute right-4 top-3 flex gap-2">
+<div class="h-6 w-10 bg-surface-container rounded flex items-center justify-center text-[8px] font-bold text-deep-navy">VISA</div>
+<div class="h-6 w-10 bg-surface-container rounded flex items-center justify-center text-[8px] font-bold text-red-600">MC</div>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div class="relative">
+<label class="absolute -top-2 left-3 px-1 bg-surface-container-lowest text-xs font-semibold text-outline">Expiry Date</label>
+<input class="w-full h-12 border border-outline px-4 rounded-lg focus:ring-1 focus:ring-antique-gold focus:border-antique-gold outline-none" placeholder="MM / YY" type="text">
+</div>
+<div class="relative">
+<label class="absolute -top-2 left-3 px-1 bg-surface-container-lowest text-xs font-semibold text-outline">CVV</label>
+<input class="w-full h-12 border border-outline px-4 rounded-lg focus:ring-1 focus:ring-antique-gold focus:border-antique-gold outline-none" placeholder="***" type="password">
+</div>
+</div>
+</form>
+</section>
+<!-- Payment Option: E-wallets -->
+<section class="bg-surface-container-lowest p-6 rounded-xl border border-outline-variant/30 shadow-sm hover:border-antique-gold transition-colors cursor-pointer group">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-outline group-hover:text-antique-gold transition-colors">account_balance_wallet</span>
+<h3 class="font-headline-sm text-headline-sm">E-wallets</h3>
+</div>
+<div class="flex gap-3">
+<div class="px-3 py-1 bg-[#ae2070] text-white text-[10px] font-bold rounded">MOMO</div>
+<div class="px-3 py-1 bg-[#008fe5] text-white text-[10px] font-bold rounded">ZaloPay</div>
+</div>
+</div>
+</section>
+<!-- Payment Option: Bank Transfer -->
+<section class="bg-surface-container-lowest p-6 rounded-xl border border-outline-variant/30 shadow-sm hover:border-antique-gold transition-colors cursor-pointer group">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-outline group-hover:text-antique-gold transition-colors">account_balance</span>
+<h3 class="font-headline-sm text-headline-sm">Bank Transfer</h3>
+</div>
+<span class="material-symbols-outlined text-outline-variant">chevron_right</span>
+</div>
+</section>
+<!-- Security Badge -->
+<div class="flex items-center justify-center gap-4 py-4 border-t border-outline-variant/20 mt-8">
+<div class="flex items-center gap-2 text-success-green">
+<span class="material-symbols-outlined text-[18px]">verified_user</span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider">Secure Payment SSL</span>
+</div>
+<div class="h-4 w-[1px] bg-outline-variant"></div>
+<div class="flex items-center gap-2 text-on-surface-variant opacity-70">
+<span class="material-symbols-outlined text-[18px]">lock</span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider">PCI Compliant</span>
+</div>
+</div>
+</div>
+<!-- Right Column: Order Summary -->
+<div class="lg:col-span-5 sticky top-24">
+<div class="bg-deep-navy text-white rounded-2xl p-8 shadow-xl overflow-hidden relative">
+<!-- Subtle pattern overlay -->
+<div class="absolute inset-0 opacity-5 pointer-events-none" style="background-image: radial-gradient(circle at 2px 2px, white 1px, transparent 0); background-size: 24px 24px;"></div>
+<h2 class="font-headline-md text-headline-md mb-6 relative z-10">Booking Summary</h2>
+<div class="space-y-6 relative z-10">
+<div class="flex justify-between items-start">
+<div>
+<p class="font-label-sm text-label-sm text-primary-fixed-dim uppercase mb-1">Stay Duration</p>
+<p class="font-body-md text-body-md">2 Nights (20 May - 22 May)</p>
+</div>
+<div class="text-right">
+<p class="font-label-sm text-label-sm text-primary-fixed-dim uppercase mb-1">Guests</p>
+<p class="font-body-md text-body-md">2 Adults</p>
+</div>
+</div>
+<div class="border-t border-white/10 pt-6 space-y-3">
+<div class="flex justify-between font-body-sm text-body-sm text-white/80">
+<span class="">TA HomeX Landmark (Room 201)</span>
+<span class="">2.900.000 VND</span>
+</div>
+<div class="flex justify-between font-body-sm text-body-sm text-white/80">
+<span class="">Cleaning Fee</span>
+<span class="">300.000 VND</span>
+</div>
+<div class="flex justify-between font-body-sm text-body-sm text-white/80">
+<span class="">Service Fee</span>
+<span class="">200.000 VND</span>
+</div>
+</div>
+<div class="border-t border-antique-gold/40 pt-6 flex justify-between items-end">
+<div>
+<p class="font-label-sm text-label-sm text-antique-gold uppercase font-bold tracking-widest mb-1">Total Amount</p>
+<p class="font-display-lg text-display-lg text-white">3.400.000 <span class="text-headline-sm font-normal">VND</span></p>
+</div>
+<div class="pb-2">
+<span class="material-symbols-outlined text-antique-gold text-[40px]">hotel_class</span>
+</div>
+</div>
+<div class="flex items-center gap-2 mb-4 text-primary-fixed-dim"><span class="material-symbols-outlined text-sm">check_circle</span><span class="text-[11px] font-bold uppercase tracking-widest">Final Confirmation</span></div><button class="w-full bg-antique-gold text-deep-navy font-bold py-4 rounded-xl hover:bg-secondary-fixed transition-all active:scale-95 shadow-lg shadow-black/20 flex items-center justify-center gap-2 ring-2 ring-white/20 ring-offset-2 ring-offset-deep-navy">
+<span class="">Pay Now</span>
+<span class="material-symbols-outlined">double_arrow</span>
+</button>
+<p class="text-center text-[10px] text-white/40 uppercase tracking-[0.2em]">Transaction ID: TXH-99283-001</p>
+</div>
+</div>
+<!-- Secondary Info -->
+<div class="mt-6 p-4 border border-outline-variant/20 rounded-xl flex items-start gap-3 bg-surface-container-low/30">
+<span class="material-symbols-outlined text-antique-gold">info</span>
+<p class="text-[13px] text-on-surface-variant leading-relaxed">
+                        By clicking "Pay Now", you agree to our <a class="text-deep-navy font-bold hover:underline" href="#">Terms of Service</a> and <a class="text-deep-navy font-bold hover:underline" href="#">Cancellation Policy</a>. Your booking is protected by TA HomeX Guarantee.
+                    </p>
+</div>
+</div>
+</div>
+</main>
+<!-- Bottom Navigation Bar (Mobile only) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full z-50 bg-surface/90 backdrop-blur-md flex justify-around items-center px-4 pb-safe h-20 shadow-lg border-t border-outline-variant/30 rounded-t-xl">
+<a class="flex flex-col items-center justify-center text-on-surface-variant" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="font-label-sm text-[10px]">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant" href="#">
+<span class="material-symbols-outlined">search</span>
+<span class="font-label-sm text-[10px]">Search</span>
+</a>
+<a class="flex flex-col items-center justify-center text-deep-navy relative after:content-[''] after:w-1 after:h-1 after:bg-antique-gold after:rounded-full after:mt-1" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">payments</span>
+<span class="font-label-sm text-[10px] font-bold">Pay</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant" href="#">
+<span class="material-symbols-outlined">chat_bubble</span>
+<span class="font-label-sm text-[10px]">Inbox</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="font-label-sm text-[10px]">Profile</span>
+</a>
+</nav>
+
+
+</body></html>

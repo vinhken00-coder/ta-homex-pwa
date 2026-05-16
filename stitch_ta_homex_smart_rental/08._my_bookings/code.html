@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .active-dot::after {
+            content: '';
+            width: 4px;
+            height: 4px;
+            background-color: #C5A059;
+            border-radius: 50%;
+            margin-top: 4px;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "background": "#faf9fd",
+                        "outline-variant": "#c4c6cf",
+                        "on-tertiary-fixed-variant": "#6c391e",
+                        "on-surface-variant": "#43474e",
+                        "deep-navy": "#002349",
+                        "surface-container": "#eeedf1",
+                        "tertiary-fixed": "#ffdbcb",
+                        "on-primary-fixed-variant": "#2c476f",
+                        "secondary-fixed-dim": "#e9c176",
+                        "surface-container-high": "#e9e7eb",
+                        "on-error": "#ffffff",
+                        "surface-dark": "#0A111F",
+                        "surface-bright": "#faf9fd",
+                        "surface-container-low": "#f4f3f7",
+                        "surface": "#faf9fd",
+                        "surface-tint": "#455f88",
+                        "primary-fixed-dim": "#adc8f6",
+                        "warning-amber": "#F2994A",
+                        "secondary": "#775a19",
+                        "surface-container-lowest": "#ffffff",
+                        "on-surface": "#1a1c1e",
+                        "surface-container-highest": "#e3e2e6",
+                        "on-secondary-fixed-variant": "#5d4201",
+                        "secondary-container": "#fed488",
+                        "primary": "#000d22",
+                        "on-tertiary-fixed": "#341100",
+                        "inverse-primary": "#adc8f6",
+                        "surface-variant": "#e3e2e6",
+                        "on-tertiary": "#ffffff",
+                        "on-secondary-container": "#785a1a",
+                        "primary-fixed": "#d5e3ff",
+                        "antique-gold": "#C5A059",
+                        "on-secondary-fixed": "#261900",
+                        "on-primary": "#ffffff",
+                        "tertiary-fixed-dim": "#ffb692",
+                        "inverse-on-surface": "#f1f0f4",
+                        "on-background": "#1a1c1e",
+                        "surface-dim": "#dad9dd",
+                        "on-primary-container": "#718bb7",
+                        "tertiary": "#1e0700",
+                        "primary-container": "#002349",
+                        "on-error-container": "#93000a",
+                        "error": "#ba1a1a",
+                        "on-secondary": "#ffffff",
+                        "on-primary-fixed": "#001b3c",
+                        "secondary-fixed": "#ffdea5",
+                        "inverse-surface": "#2f3033",
+                        "success-green": "#27AE60",
+                        "outline": "#74777f",
+                        "error-container": "#ffdad6",
+                        "on-tertiary-container": "#bc7b5a",
+                        "tertiary-container": "#401701"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-desktop": "32px",
+                        "base": "8px",
+                        "stack-md": "16px",
+                        "stack-lg": "24px",
+                        "gutter": "16px",
+                        "stack-sm": "8px",
+                        "margin-mobile": "16px"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["Manrope"],
+                        "label-lg": ["Manrope"],
+                        "headline-sm": ["Manrope"],
+                        "display-lg": ["Manrope"],
+                        "headline-lg": ["Manrope"],
+                        "label-sm": ["Manrope"],
+                        "headline-md": ["Manrope"],
+                        "body-sm": ["Manrope"],
+                        "body-md": ["Manrope"]
+                    },
+                    "fontSize": {
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "label-lg": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                        "headline-sm": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                        "display-lg": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                        "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.04em", "fontWeight": "500"}],
+                        "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-background text-on-surface font-body-md selection:bg-antique-gold/30">
+<!-- Top AppBar -->
+<header class="flex justify-between items-center px-margin-mobile h-16 w-full sticky top-0 z-50 bg-surface dark:bg-surface-dark">
+<div class="flex items-center gap-stack-md">
+<img alt="TA HomeX Logo" class="h-10 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCH4vQvEeWhiWd3ysQThYAeeaKyThfmlEjTcS3vD-xv574_T4_7vi_Ai4w_nYQm1xwTsqkSE7Nbd_hZi4O8MzMGAzD2eex07irjI5Ay7_WiyLUW-irNOAS-Z0jDE6rT9sEno71TgmcwSmnwgimbI29VIO0bnRiYVtXZEnycF2hZhscQ8Rt2-VK8Xaaq2wnoNpFzxCB8riiyfmzOvAtdBYZZov7OUOv9ht-nk7VW8eQ89TW1TMSRlegRwNeV3yneYjmgyHGyWvW7IIE"/>
+<h1 class="font-headline-sm text-headline-sm text-deep-navy dark:text-antique-gold">My Bookings</h1>
+</div>
+<div class="flex items-center gap-stack-md">
+<button class="material-symbols-outlined text-primary p-2 hover:bg-surface-container-low rounded-full transition-colors" data-icon="notifications">notifications</button>
+<div class="w-10 h-10 rounded-full bg-surface-container-highest border border-outline-variant overflow-hidden">
+<img alt="Profile" class="w-full h-full object-cover" data-alt="A professional close-up portrait of a sophisticated man in his late 30s, wearing a tailored navy blazer and a crisp white shirt. The background is a blurred high-end apartment interior with soft sunlight and warm wooden accents. The overall aesthetic is clean, premium, and focused on professional hospitality identity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAP51PC69NcLKq4EidBbJMBwcNQ-2GkzgDe-tcX237gMkSW574R282ear9l2r9ciCtz-vU5XqX67ggY_Lemo8BcDBw8_kiqDzQxpkOgah0xAgiSQFo5XeIrR-v9os8VWmWj_5V5rGEvseVKvht_8K3g_cRe4FJJVvMORm9m2mPznvCngVBJf3vKoUPExLZwlToJtOFhQ7jxTVP60DP4DWdCp22IKM3BoX125Y_hwkXf7erXeAyqKBmNpcvnTTSbH2ZHQSdFcMSnbfU"/>
+</div>
+</div>
+</header>
+<main class="max-w-7xl mx-auto px-margin-mobile py-stack-lg pb-32">
+<!-- Tabs -->
+<div class="flex gap-stack-md mb-stack-lg overflow-x-auto pb-2 no-scrollbar">
+<button class="px-6 py-2 bg-deep-navy text-white font-label-lg rounded-full shrink-0">Upcoming</button>
+<button class="px-6 py-2 bg-surface-container-low text-on-surface-variant font-label-lg rounded-full shrink-0 hover:bg-surface-container-high transition-colors">Past</button>
+<button class="px-6 py-2 bg-surface-container-low text-on-surface-variant font-label-lg rounded-full shrink-0 hover:bg-surface-container-high transition-colors">Cancelled</button>
+</div>
+<!-- Bookings Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter">
+<!-- Booking Card 1 (Upcoming) -->
+<div class="bg-surface-container-lowest rounded-xl overflow-hidden border border-outline-variant/30 shadow-lg group hover:border-antique-gold/50 transition-all duration-300">
+<div class="relative h-48 w-full">
+<img alt="TA HomeX Landmark" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A luxury penthouse living room with floor-to-ceiling windows overlooking a modern city skyline at dusk. The interior features plush cream-colored sofas, minimalist gold-accented furniture, and warm ambient lighting. The atmosphere is sophisticated and expensive, perfectly capturing the premium lifestyle of TA HomeX." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCNl-1nexll9tRZY0P6JGND3VU3zMdtZ1hXyARai0RK5FuQ6pg2lb53zqXF4vuz5tCZMAYPw-D9ie6xnq9W1lMARI4LcYg9Bx1oG-fi45CUG9uRilnFSvkcRosyp5BaZsszQjkrDjZFpI5WMmhmvdkkpbV7VoGJTjKK2duaTvwW5LvGxnT-icqhEfnrjS-Z45NkjKqUc-i5cCTTaZk8Fk6RwJFh7KCwrhMxgS3evPcdhqz7o0FwwNaIOAgd5JOVYkbMiIOh4psOqN4"/>
+<div class="absolute top-4 right-4 px-3 py-1 bg-success-green/10 backdrop-blur-sm border border-success-green/20 rounded-full">
+<span class="text-success-green font-label-sm uppercase tracking-wider">Confirmed</span>
+</div>
+</div>
+<div class="p-stack-md">
+<div class="flex justify-between items-start mb-2">
+<div>
+<h3 class="font-headline-sm text-headline-sm text-deep-navy">TA HomeX Landmark</h3>
+<p class="text-on-surface-variant text-body-sm">Binh Thanh District, HCMC</p>
+</div>
+</div>
+<div class="flex items-center gap-3 py-3 border-y border-outline-variant/20 my-3">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-antique-gold text-lg" data-icon="calendar_today">calendar_today</span>
+<span class="font-label-sm text-on-surface">20/05/2024 - 22/05/2024</span>
+</div>
+<div class="h-4 w-[1px] bg-outline-variant/40"></div>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-antique-gold text-lg" data-icon="person">person</span>
+<span class="font-label-sm text-on-surface">2 Guests</span>
+</div>
+</div>
+<div class="flex justify-between items-center mt-4">
+<div>
+<p class="text-on-surface-variant text-label-sm uppercase tracking-tight">Total Price</p>
+<p class="font-headline-md text-deep-navy">3.400.000 VND</p>
+</div>
+<button class="bg-antique-gold hover:bg-antique-gold/90 text-white font-label-lg px-6 py-2 rounded-lg transition-all active:scale-95">View Details</button>
+</div>
+</div>
+</div>
+<!-- Booking Card 2 (Upcoming) -->
+<div class="bg-surface-container-lowest rounded-xl overflow-hidden border border-outline-variant/30 shadow-lg group hover:border-antique-gold/50 transition-all duration-300">
+<div class="relative h-48 w-full">
+<img alt="TA HomeX Rivergate" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A sleek, modern studio apartment featuring high-tech integrated smart controls and minimalist furniture. Large windows offer a view of a serene river at sunrise. The color palette consists of cool grays, deep blues, and warm gold lighting, reflecting a smart, prestigious residential experience." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCzmFRSzhUSn7LmMCh1kYxQHrO3ejnXrXwm2VshjsrNDepNvMrTiP1t7dn_Rd682vg334KbJaJhp0flThypXoBJ-vqSMb35CkfAhwmpcNT3sfRoF1ZOXlio5IvPVnLmWjJXlsibvMoI4I5CXok4gTyCru-wWW4bXTLcQJi8r5SHBLGaVDUWUH6zasmg-TIo-GZvroQ3s_2Bl61EzqS1-6HrLDJfeJSQJ_gwztBOvmf0kho2q4rJQzZQyRU2G1M_hIvbpttdpmYxnts"/>
+<div class="absolute top-4 right-4 px-3 py-1 bg-warning-amber/10 backdrop-blur-sm border border-warning-amber/20 rounded-full">
+<span class="text-warning-amber font-label-sm uppercase tracking-wider">Pending</span>
+</div>
+</div>
+<div class="p-stack-md">
+<div class="flex justify-between items-start mb-2">
+<div>
+<h3 class="font-headline-sm text-headline-sm text-deep-navy">TA HomeX Rivergate</h3>
+<p class="text-on-surface-variant text-body-sm">District 4, HCMC</p>
+</div>
+</div>
+<div class="flex items-center gap-3 py-3 border-y border-outline-variant/20 my-3">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-antique-gold text-lg" data-icon="calendar_today">calendar_today</span>
+<span class="font-label-sm text-on-surface">28/05/2024 - 30/05/2024</span>
+</div>
+<div class="h-4 w-[1px] bg-outline-variant/40"></div>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-antique-gold text-lg" data-icon="person">person</span>
+<span class="font-label-sm text-on-surface">1 Guest</span>
+</div>
+</div>
+<div class="flex justify-between items-center mt-4">
+<div>
+<p class="text-on-surface-variant text-label-sm uppercase tracking-tight">Total Price</p>
+<p class="font-headline-md text-deep-navy">2.150.000 VND</p>
+</div>
+<button class="bg-antique-gold hover:bg-antique-gold/90 text-white font-label-lg px-6 py-2 rounded-lg transition-all active:scale-95">Manage</button>
+</div>
+</div>
+</div>
+<!-- Booking Card 3 (History Section Intro) -->
+<div class="bg-surface-container-low/50 rounded-xl overflow-hidden border border-dashed border-outline-variant flex flex-col items-center justify-center p-8 text-center gap-4 group cursor-pointer hover:bg-surface-container-low transition-colors">
+<div class="w-16 h-16 rounded-full bg-antique-gold/10 flex items-center justify-center group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-antique-gold text-3xl" data-icon="history">history</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-deep-navy">Past Experiences</h3>
+<p class="text-on-surface-variant text-body-sm mt-1">Review your 12 completed stays with TA HomeX Luxury Hospitality.</p>
+</div>
+<button class="mt-2 text-deep-navy font-label-lg flex items-center gap-2">
+                    View History <span class="material-symbols-outlined" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Featured Section Asymmetric -->
+<section class="mt-16 bg-deep-navy rounded-2xl overflow-hidden relative min-h-[300px] flex items-center">
+<div class="absolute inset-0 opacity-40">
+<img alt="Luxury Services" class="w-full h-full object-cover" data-alt="An elegant evening shot of a luxury hotel lobby with polished marble floors, grand crystal chandeliers, and gold architectural accents. The space is filled with a soft golden glow, exuding warmth, security, and extreme luxury. The camera angle is low and wide, emphasizing the grandeur of the premium space." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBX7wZfodD6awXUHzCKbC0RP4MA_dVt9HiPD1Ya-ee6U1XwSoAABtKugXds8S_sdLFvbfw_-z4PrK_dcePf0v7WNWSk0AKXcgS4OCKJvbxzXx65bFr_axwS-hf3TNuomtBtyhNiPuZI7B8xvz0b7gjvunxzX3djCLXC0YPGNrnkDxxWyIlb9PZq80TvKIqFtTTJhA4JNEnnXJ2blQWVFU5_ZDfvmc3BvXPNFAIaCOl4KCcK1CAqkKsKlqBr2ARO0SBvwDRFnkr1VRY"/>
+</div>
+<div class="relative z-10 p-10 max-w-2xl">
+<span class="text-antique-gold font-label-sm uppercase tracking-[0.2em] mb-4 block">Exclusive Membership</span>
+<h2 class="text-white font-display-lg text-display-lg mb-6 leading-tight">Elevate Your Living Experience</h2>
+<p class="text-on-primary-container text-body-lg mb-8">Unlock smart home features, priority booking, and curated residential services by joining our elite tier.</p>
+<button class="bg-antique-gold text-deep-navy font-label-lg px-8 py-4 rounded-lg shadow-xl hover:shadow-antique-gold/20 transition-all active:scale-95">Upgrade to Smart Mode</button>
+</div>
+</section>
+</main>
+<!-- Bottom Navigation Bar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-safe h-20 bg-surface/90 dark:bg-surface-dark/90 backdrop-blur-md shadow-lg border-t border-outline-variant/30 dark:border-outline/20">
+<button class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant hover:text-primary transition-all">
+<span class="material-symbols-outlined text-2xl" data-icon="home">home</span>
+<span class="font-label-sm text-[10px] mt-1">Home</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant hover:text-primary transition-all">
+<span class="material-symbols-outlined text-2xl" data-icon="search">search</span>
+<span class="font-label-sm text-[10px] mt-1">Search</span>
+</button>
+<button class="flex flex-col items-center justify-center text-deep-navy dark:text-antique-gold relative after:content-[''] after:w-1 after:h-1 after:bg-antique-gold after:rounded-full after:mt-1 transition-all active:scale-90">
+<span class="material-symbols-outlined text-2xl" data-icon="calendar_month">calendar_month</span>
+<span class="font-label-sm text-[10px] mt-1">Bookings</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant hover:text-primary transition-all">
+<span class="material-symbols-outlined text-2xl" data-icon="chat_bubble">chat_bubble</span>
+<span class="font-label-sm text-[10px] mt-1">Inbox</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant hover:text-primary transition-all">
+<span class="material-symbols-outlined text-2xl" data-icon="person">person</span>
+<span class="font-label-sm text-[10px] mt-1">Profile</span>
+</button>
+</nav>
+</body></html>

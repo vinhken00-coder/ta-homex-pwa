@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Booking Success - TA HomeX</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "background": "#faf9fd",
+                        "outline-variant": "#c4c6cf",
+                        "on-tertiary-fixed-variant": "#6c391e",
+                        "on-surface-variant": "#43474e",
+                        "deep-navy": "#002349",
+                        "surface-container": "#eeedf1",
+                        "tertiary-fixed": "#ffdbcb",
+                        "on-primary-fixed-variant": "#2c476f",
+                        "secondary-fixed-dim": "#e9c176",
+                        "surface-container-high": "#e9e7eb",
+                        "on-error": "#ffffff",
+                        "surface-dark": "#0A111F",
+                        "surface-bright": "#faf9fd",
+                        "surface-container-low": "#f4f3f7",
+                        "surface": "#faf9fd",
+                        "surface-tint": "#455f88",
+                        "primary-fixed-dim": "#adc8f6",
+                        "warning-amber": "#F2994A",
+                        "secondary": "#775a19",
+                        "surface-container-lowest": "#ffffff",
+                        "on-surface": "#1a1c1e",
+                        "surface-container-highest": "#e3e2e6",
+                        "on-secondary-fixed-variant": "#5d4201",
+                        "secondary-container": "#fed488",
+                        "primary": "#000d22",
+                        "on-tertiary-fixed": "#341100",
+                        "inverse-primary": "#adc8f6",
+                        "surface-variant": "#e3e2e6",
+                        "on-tertiary": "#ffffff",
+                        "on-secondary-container": "#785a1a",
+                        "primary-fixed": "#d5e3ff",
+                        "antique-gold": "#C5A059",
+                        "on-secondary-fixed": "#261900",
+                        "on-primary": "#ffffff",
+                        "tertiary-fixed-dim": "#ffb692",
+                        "inverse-on-surface": "#f1f0f4",
+                        "on-background": "#1a1c1e",
+                        "surface-dim": "#dad9dd",
+                        "on-primary-container": "#718bb7",
+                        "tertiary": "#1e0700",
+                        "primary-container": "#002349",
+                        "on-error-container": "#93000a",
+                        "error": "#ba1a1a",
+                        "on-secondary": "#ffffff",
+                        "on-primary-fixed": "#001b3c",
+                        "secondary-fixed": "#ffdea5",
+                        "inverse-surface": "#2f3033",
+                        "success-green": "#27AE60",
+                        "outline": "#74777f",
+                        "error-container": "#ffdad6",
+                        "on-tertiary-container": "#bc7b5a",
+                        "tertiary-container": "#401701"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-desktop": "32px",
+                        "base": "8px",
+                        "stack-md": "16px",
+                        "stack-lg": "24px",
+                        "gutter": "16px",
+                        "stack-sm": "8px",
+                        "margin-mobile": "16px"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["Manrope"],
+                        "label-lg": ["Manrope"],
+                        "headline-sm": ["Manrope"],
+                        "display-lg": ["Manrope"],
+                        "headline-lg": ["Manrope"],
+                        "label-sm": ["Manrope"],
+                        "headline-md": ["Manrope"],
+                        "body-sm": ["Manrope"],
+                        "body-md": ["Manrope"]
+                    },
+                    "fontSize": {
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "label-lg": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                        "headline-sm": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                        "display-lg": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                        "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.04em", "fontWeight": "500"}],
+                        "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Manrope', sans-serif; }
+    </style>
+</head>
+<body class="bg-background text-on-surface min-h-screen flex flex-col">
+<header class="flex justify-between items-center px-margin-mobile h-16 w-full sticky top-0 z-50 bg-surface dark:bg-surface-dark">
+<div class="flex items-center gap-2">
+<img alt="TA HomeX Logo" class="h-10 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCH4vQvEeWhiWd3ysQThYAeeaKyThfmlEjTcS3vD-xv574_T4_7vi_Ai4w_nYQm1xwTsqkSE7Nbd_hZi4O8MzMGAzD2eex07irjI5Ay7_WiyLUW-irNOAS-Z0jDE6rT9sEno71TgmcwSmnwgimbI29VIO0bnRiYVtXZEnycF2hZhscQ8Rt2-VK8Xaaq2wnoNpFzxCB8riiyfmzOvAtdBYZZov7OUOv9ht-nk7VW8eQ89TW1TMSRlegRwNeV3yneYjmgyHGyWvW7IIE"/>
+<span class="font-display-lg text-headline-sm tracking-tight text-deep-navy dark:text-antique-gold">TA HomeX</span>
+</div>
+<div class="flex items-center gap-4">
+<button class="material-symbols-outlined text-on-surface-variant p-2 rounded-full hover:bg-surface-container-low transition-colors" data-icon="notifications">notifications</button>
+<div class="w-8 h-8 rounded-full bg-primary-container flex items-center justify-center text-on-primary-container font-label-lg overflow-hidden">
+<img alt="User profile avatar" class="w-full h-full object-cover" data-alt="A professional high-quality close-up studio portrait of a young sophisticated man for a premium user profile. He has a warm smile and is set against a clean, minimal light grey background. The lighting is soft and cinematic, emphasizing a modern luxury tech brand aesthetic with a palette of deep blues and subtle gold accents." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBUVXWSIXRn4WXPro3L0qQANfsbfKlFaxl_4tACSUeZA3i31EDO5SaIbTwwTwUm2FcbUjHnyJUGjt9_MxHKLWJgzweccWbBPJQ_Y4Sxzw3oDYQpYJ1ZoBLocca9fWcKayo6TVoMqTHS5LtqJ99HperhNcJijbGFq7YnlD2XIrkiThaHdHa688GY86ZPmIbbWvMFN2gx3P6RTyL27KJEbiMFzeSawvyVYFaFXsgUWG6Nz-IFdGnY9xzNDjP603gRXhoJRls2B7ccWXs"/>
+</div>
+</div>
+</header>
+<main class="flex-grow flex flex-col items-center justify-center px-margin-mobile py-stack-lg max-w-lg mx-auto text-center">
+<div class="mb-stack-lg relative">
+<div class="w-24 h-24 bg-success-green/10 rounded-full flex items-center justify-center mx-auto animate-pulse">
+<span class="material-symbols-outlined text-[64px] text-success-green" data-weight="fill" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<div class="absolute -top-2 -right-2">
+<span class="material-symbols-outlined text-antique-gold text-2xl" data-icon="auto_awesome">auto_awesome</span>
+</div>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-deep-navy mb-stack-sm">Booking Successful!</h1>
+<p class="font-body-md text-on-surface-variant mb-stack-lg">Your luxury stay is confirmed. We're getting everything ready for your arrival.</p>
+<div class="w-full bg-surface-container-lowest border border-outline-variant/30 rounded-xl p-stack-md shadow-sm mb-stack-lg space-y-4 text-left">
+<div class="flex justify-between items-center border-b border-outline-variant/20 pb-stack-sm">
+<span class="font-label-lg text-on-surface-variant">Booking ID</span>
+<span class="font-label-lg text-deep-navy">#TA12345</span>
+</div>
+<div>
+<h3 class="font-label-lg text-deep-navy mb-1">Check-in Instructions</h3>
+<p class="font-body-sm text-on-surface-variant">Your digital key will be activated 15 minutes before your check-in time. Use the Smart Home panel to access your apartment.</p>
+</div>
+<div class="flex gap-3 pt-stack-sm">
+<div class="flex-1 bg-surface-container-low rounded-lg p-3">
+<span class="block font-label-sm text-outline uppercase tracking-wider mb-1">Check-in</span>
+<span class="font-label-lg text-deep-navy">20 May, 14:00</span>
+</div>
+<div class="flex-1 bg-surface-container-low rounded-lg p-3">
+<span class="block font-label-sm text-outline uppercase tracking-wider mb-1">Check-out</span>
+<span class="font-label-lg text-deep-navy">22 May, 12:00</span>
+</div>
+</div>
+</div>
+<div class="w-full space-y-4">
+<button class="w-full bg-deep-navy text-on-primary font-label-lg h-14 rounded-xl flex items-center justify-center gap-2 transition-transform active:scale-95 shadow-md">
+<span class="material-symbols-outlined text-antique-gold" data-icon="smart_toy">smart_toy</span>
+                Go to Smart Home Control
+            </button>
+<button class="w-full border border-deep-navy text-deep-navy font-label-lg h-14 rounded-xl flex items-center justify-center gap-2 hover:bg-surface-container-low transition-all">
+<span class="material-symbols-outlined" data-icon="calendar_month">calendar_month</span>
+                View My Bookings
+            </button>
+</div>
+<div class="mt-stack-lg p-stack-md bg-antique-gold/5 rounded-xl border border-antique-gold/10 flex items-start gap-4 text-left">
+<span class="material-symbols-outlined text-antique-gold mt-1" data-icon="info">info</span>
+<p class="font-body-sm text-on-surface-variant italic">
+                Need help? Our 24/7 concierge is available in the Inbox tab for any special requests.
+            </p>
+</div>
+</main>
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-safe h-20 bg-surface/90 dark:bg-surface-dark/90 backdrop-blur-md border-t border-outline-variant/30 shadow-lg">
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant hover:text-primary transition-all duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-label-sm text-label-sm">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant hover:text-primary transition-all duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="search">search</span>
+<span class="font-label-sm text-label-sm">Search</span>
+</a>
+<a class="flex flex-col items-center justify-center text-deep-navy dark:text-antique-gold relative after:content-[''] after:w-1 after:h-1 after:bg-antique-gold after:rounded-full after:mt-1 scale-90 transition-all duration-200 ease-out" href="#">
+<span class="material-symbols-outlined" data-icon="calendar_month" data-weight="fill" style="font-variation-settings: 'FILL' 1;">calendar_month</span>
+<span class="font-label-sm text-label-sm">Bookings</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant hover:text-primary transition-all duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="chat_bubble">chat_bubble</span>
+<span class="font-label-sm text-label-sm">Inbox</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant hover:text-primary transition-all duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-label-sm text-label-sm">Profile</span>
+</a>
+</nav>
+<div class="h-24"></div>
+</body></html>

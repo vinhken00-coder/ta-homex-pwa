@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Profile - TA HomeX</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "background": "#faf9fd",
+                        "outline-variant": "#c4c6cf",
+                        "on-tertiary-fixed-variant": "#6c391e",
+                        "on-surface-variant": "#43474e",
+                        "deep-navy": "#002349",
+                        "surface-container": "#eeedf1",
+                        "tertiary-fixed": "#ffdbcb",
+                        "on-primary-fixed-variant": "#2c476f",
+                        "secondary-fixed-dim": "#e9c176",
+                        "surface-container-high": "#e9e7eb",
+                        "on-error": "#ffffff",
+                        "surface-dark": "#0A111F",
+                        "surface-bright": "#faf9fd",
+                        "surface-container-low": "#f4f3f7",
+                        "surface": "#faf9fd",
+                        "surface-tint": "#455f88",
+                        "primary-fixed-dim": "#adc8f6",
+                        "warning-amber": "#F2994A",
+                        "secondary": "#775a19",
+                        "surface-container-lowest": "#ffffff",
+                        "on-surface": "#1a1c1e",
+                        "surface-container-highest": "#e3e2e6",
+                        "on-secondary-fixed-variant": "#5d4201",
+                        "secondary-container": "#fed488",
+                        "primary": "#000d22",
+                        "on-tertiary-fixed": "#341100",
+                        "inverse-primary": "#adc8f6",
+                        "surface-variant": "#e3e2e6",
+                        "on-tertiary": "#ffffff",
+                        "on-secondary-container": "#785a1a",
+                        "primary-fixed": "#d5e3ff",
+                        "antique-gold": "#C5A059",
+                        "on-secondary-fixed": "#261900",
+                        "on-primary": "#ffffff",
+                        "tertiary-fixed-dim": "#ffb692",
+                        "inverse-on-surface": "#f1f0f4",
+                        "on-background": "#1a1c1e",
+                        "surface-dim": "#dad9dd",
+                        "on-primary-container": "#718bb7",
+                        "tertiary": "#1e0700",
+                        "primary-container": "#002349",
+                        "on-error-container": "#93000a",
+                        "error": "#ba1a1a",
+                        "on-secondary": "#ffffff",
+                        "on-primary-fixed": "#001b3c",
+                        "secondary-fixed": "#ffdea5",
+                        "inverse-surface": "#2f3033",
+                        "success-green": "#27AE60",
+                        "outline": "#74777f",
+                        "error-container": "#ffdad6",
+                        "on-tertiary-container": "#bc7b5a",
+                        "tertiary-container": "#401701"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-desktop": "32px",
+                        "base": "8px",
+                        "stack-md": "16px",
+                        "stack-lg": "24px",
+                        "gutter": "16px",
+                        "stack-sm": "8px",
+                        "margin-mobile": "16px"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["Manrope"],
+                        "label-lg": ["Manrope"],
+                        "headline-sm": ["Manrope"],
+                        "display-lg": ["Manrope"],
+                        "headline-lg": ["Manrope"],
+                        "label-sm": ["Manrope"],
+                        "headline-md": ["Manrope"],
+                        "body-sm": ["Manrope"],
+                        "body-md": ["Manrope"]
+                    },
+                    "fontSize": {
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "label-lg": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                        "headline-sm": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                        "display-lg": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                        "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.04em", "fontWeight": "500"}],
+                        "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Manrope', sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .custom-glass {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background min-h-screen pb-32">
+<!-- TopAppBar -->
+<header class="bg-surface dark:bg-surface-dark flex justify-between items-center px-margin-mobile h-16 w-full sticky top-0 z-50 transition-all duration-300">
+<div class="flex items-center gap-3">
+<img alt="TA HomeX Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCH4vQvEeWhiWd3ysQThYAeeaKyThfmlEjTcS3vD-xv574_T4_7vi_Ai4w_nYQm1xwTsqkSE7Nbd_hZi4O8MzMGAzD2eex07irjI5Ay7_WiyLUW-irNOAS-Z0jDE6rT9sEno71TgmcwSmnwgimbI29VIO0bnRiYVtXZEnycF2hZhscQ8Rt2-VK8Xaaq2wnoNpFzxCB8riiyfmzOvAtdBYZZov7OUOv9ht-nk7VW8eQ89TW1TMSRlegRwNeV3yneYjmgyHGyWvW7IIE"/>
+<span class="font-display-lg text-headline-sm tracking-tight text-deep-navy dark:text-antique-gold font-extrabold uppercase">TA HomeX</span>
+</div>
+<div class="flex items-center gap-4">
+<button class="relative p-2 rounded-full hover:bg-surface-container-low dark:hover:bg-primary-container/20 transition-transform active:scale-95 duration-150">
+<span class="material-symbols-outlined text-primary dark:text-primary-fixed" data-icon="notifications">notifications</span>
+<span class="absolute top-2 right-2 w-2 h-2 bg-error rounded-full"></span>
+</button>
+<div class="w-10 h-10 rounded-full border-2 border-antique-gold p-0.5 overflow-hidden">
+<img class="w-full h-full object-cover rounded-full" data-alt="A close-up portrait of a sophisticated young man with a friendly smile, clean-cut beard, and stylish haircut. He is wearing a minimalist navy blue polo shirt. The background is a soft-focus modern apartment interior with warm evening light filtering through large windows, creating a premium and residential atmosphere." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDUn8kZQHlkip_ctLS_dl6HcT9Sd19w5Zes3wNZmpxdijcsioEau-WXZ1UCGfD-eez3__LRWR4ej9DxhN-g10iZy-7aQQb2b_SavVFXBxKhBXBC6VeeQJD8n7iLpYbCve4L6Ci7X0ev2sGl3C138tQHzvZSMaQGv8hu_OBOeV-l-BquYCFB7XeqY-q2Lyz1WP6Oo2PCBs8GQNlC_AieUN7CpnhFPVHD6gmzk-bi6hEgaOQZehRl82wzBdLlUwNKtVnpv9GimLjKe-U"/>
+</div>
+</div>
+</header>
+<main class="max-w-[1280px] mx-auto px-margin-mobile md:px-margin-desktop py-stack-lg">
+<!-- Profile Hero Section -->
+<section class="mb-stack-lg animate-fade-in">
+<div class="flex flex-col md:flex-row items-center md:items-end gap-6 bg-white dark:bg-surface-dark p-6 rounded-xl shadow-sm border border-outline-variant/30">
+<div class="relative">
+<div class="w-32 h-32 rounded-2xl overflow-hidden shadow-lg border-4 border-white dark:border-primary-container">
+<img class="w-full h-full object-cover" data-alt="Detailed professional headshot of a man named Henry, featuring sharp focus on facial features and friendly expression. He is positioned in a luxury residential setting with warm, golden-hour lighting. The aesthetic is clean, modern, and high-end, utilizing soft bokeh to emphasize the subject." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAl8Rj_4WeToW8wsmJj5L4RwrFDgLN_in1ViXnA8j7-8ihOchpqUBHZMUyn_mLZYk1E2b0llEYnTPavp1oTK6QhnMMVqnVlslOIKDBi1VRIbC-JuA2XcyygemnxJV_AX4eRTkd9ryGILZNjEO1ClAxx2keLXTEoyN-dGrfU80GFmulGXBMZrtVJhGhIAxpX9ap_DRRWGRugKZjq1iiKBZ5yfLcmMmavxasQFFA2h12dcXBowopW_P7GaWRgtudsmSaSyrfNjl5oB9I"/>
+</div>
+<div class="absolute -bottom-2 -right-2 bg-antique-gold text-deep-navy px-3 py-1 rounded-full flex items-center gap-1 shadow-md">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">stars</span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider font-bold">Gold Member</span>
+</div>
+</div>
+<div class="flex-grow text-center md:text-left">
+<h1 class="font-headline-lg text-headline-lg text-deep-navy mb-1">Henry Nguyen</h1>
+<p class="font-body-md text-on-surface-variant flex items-center justify-center md:justify-start gap-2">
+<span class="material-symbols-outlined text-[18px]">verified_user</span>
+                        henry.n@tahomex.com
+                    </p>
+</div>
+<div class="flex gap-3">
+<button class="bg-antique-gold text-white px-6 py-3 rounded-lg font-label-lg flex items-center gap-2 shadow-lg hover:brightness-110 active:scale-95 transition-all">
+                        Edit Profile
+                    </button>
+</div>
+</div>
+</section>
+<!-- Bento Grid Layout for Menu & Stats -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+<!-- Main Navigation Menu -->
+<div class="lg:col-span-8 space-y-stack-md">
+<div class="bg-white dark:bg-surface-dark rounded-xl border border-outline-variant/30 overflow-hidden shadow-sm">
+<div class="p-4 border-b border-outline-variant/20">
+<h2 class="font-headline-sm text-headline-sm text-deep-navy">Account Settings</h2>
+</div>
+<nav class="divide-y divide-outline-variant/10">
+<!-- Personal Info -->
+<a class="flex items-center justify-between p-5 hover:bg-surface-container-low transition-colors group" href="#">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-lg bg-primary-container/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">person</span>
+</div>
+<div>
+<p class="font-label-lg text-label-lg text-on-surface">Personal Information</p>
+<p class="font-body-sm text-label-sm text-on-surface-variant">Update your details and contact info</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline-variant group-hover:text-antique-gold transition-colors">chevron_right</span>
+</a>
+<!-- Payment Methods -->
+<a class="flex items-center justify-between p-5 hover:bg-surface-container-low transition-colors group" href="#">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-lg bg-primary-container/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">payments</span>
+</div>
+<div>
+<p class="font-label-lg text-label-lg text-on-surface">Payment Methods</p>
+<p class="font-body-sm text-label-sm text-on-surface-variant">Manage your saved cards and billing</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline-variant group-hover:text-antique-gold transition-colors">chevron_right</span>
+</a>
+<!-- Security -->
+<a class="flex items-center justify-between p-5 hover:bg-surface-container-low transition-colors group" href="#">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-lg bg-primary-container/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">security</span>
+</div>
+<div>
+<p class="font-label-lg text-label-lg text-on-surface">Security</p>
+<p class="font-body-sm text-label-sm text-on-surface-variant">Password, 2FA, and login history</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline-variant group-hover:text-antique-gold transition-colors">chevron_right</span>
+</a>
+<!-- Help Center -->
+<a class="flex items-center justify-between p-5 hover:bg-surface-container-low transition-colors group" href="#">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-lg bg-primary-container/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">help_center</span>
+</div>
+<div>
+<p class="font-label-lg text-label-lg text-on-surface">Help Center</p>
+<p class="font-body-sm text-label-sm text-on-surface-variant">FAQs, support chat, and user guides</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline-variant group-hover:text-antique-gold transition-colors">chevron_right</span>
+</a>
+<!-- Settings -->
+<a class="flex items-center justify-between p-5 hover:bg-surface-container-low transition-colors group" href="#">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-lg bg-primary-container/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">settings</span>
+</div>
+<div>
+<p class="font-label-lg text-label-lg text-on-surface">Settings</p>
+<p class="font-body-sm text-label-sm text-on-surface-variant">App preferences and notifications</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline-variant group-hover:text-antique-gold transition-colors">chevron_right</span>
+</a>
+<!-- Logout -->
+<a class="flex items-center justify-between p-5 hover:bg-error-container/20 transition-colors group" href="#">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-lg bg-error/10 flex items-center justify-center text-error">
+<span class="material-symbols-outlined">logout</span>
+</div>
+<div>
+<p class="font-label-lg text-label-lg text-error">Logout</p>
+<p class="font-body-sm text-label-sm text-error/70">Sign out of your account</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-error/30 group-hover:text-error transition-colors">logout</span>
+</a>
+</nav>
+</div>
+</div>
+<!-- Side Bento Panels -->
+<div class="lg:col-span-4 space-y-gutter">
+<!-- Become an Owner Prominent Card -->
+<div class="relative bg-deep-navy text-white rounded-xl overflow-hidden p-6 shadow-xl group cursor-pointer">
+<div class="absolute top-0 right-0 w-32 h-32 bg-antique-gold/10 rounded-full -mr-16 -mt-16 blur-2xl"></div>
+<div class="relative z-10">
+<span class="bg-antique-gold/20 text-antique-gold px-3 py-1 rounded-full text-label-sm font-bold uppercase tracking-widest mb-4 inline-block">Partner with us</span>
+<h3 class="font-headline-md text-headline-md mb-2">Become an Owner</h3>
+<p class="font-body-md text-on-primary-container text-white/70 mb-6">List your property and earn passive income with our smart management system.</p>
+<div class="flex items-center gap-2 text-antique-gold font-label-lg group-hover:translate-x-2 transition-transform">
+                            Learn more <span class="material-symbols-outlined">arrow_forward</span>
+</div>
+</div>
+<div class="mt-8 flex justify-center opacity-40 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-[80px]" style="font-variation-settings: 'FILL' 1;">real_estate_agent</span>
+</div>
+</div>
+<!-- Membership Benefits -->
+<div class="bg-white dark:bg-surface-dark rounded-xl border border-outline-variant/30 p-6 shadow-sm">
+<h4 class="font-headline-sm text-headline-sm text-deep-navy mb-4">Membership Stats</h4>
+<div class="space-y-4">
+<div class="flex items-center justify-between">
+<span class="font-body-md text-on-surface-variant">Stayed Nights</span>
+<span class="font-headline-sm text-primary">24</span>
+</div>
+<div class="w-full bg-surface-container rounded-full h-2 overflow-hidden">
+<div class="bg-antique-gold h-full w-3/4 rounded-full"></div>
+</div>
+<p class="font-body-sm text-label-sm text-on-surface-variant">6 more nights to reach <span class="text-antique-gold font-bold">Platinum</span> status.</p>
+</div>
+</div>
+<!-- App Info -->
+<div class="text-center">
+<p class="font-label-sm text-outline-variant">TA HomeX v2.4.1 (Stable)</p>
+<p class="font-label-sm text-outline-variant">© 2024 Luxury Smart Hospitality</p>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-safe h-20 bg-surface/90 dark:bg-surface-dark/90 backdrop-blur-md border-t border-outline-variant/30 dark:border-outline/20 shadow-lg md:hidden">
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant hover:text-primary transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-label-sm text-label-sm-mobile mt-1">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant hover:text-primary transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="search">search</span>
+<span class="font-label-sm text-label-sm-mobile mt-1">Search</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant hover:text-primary transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="calendar_month">calendar_month</span>
+<span class="font-label-sm text-label-sm-mobile mt-1">Bookings</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant hover:text-primary transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="chat_bubble">chat_bubble</span>
+<span class="font-label-sm text-label-sm-mobile mt-1">Inbox</span>
+</a>
+<a class="flex flex-col items-center justify-center text-deep-navy dark:text-antique-gold relative after:content-[''] after:w-1 after:h-1 after:bg-antique-gold after:rounded-full after:mt-1 scale-90 transition-all duration-200 ease-out" href="#">
+<span class="material-symbols-outlined" data-icon="person" style="font-variation-settings: 'FILL' 1;">person</span>
+<span class="font-label-sm text-label-sm-mobile mt-1">Profile</span>
+</a>
+</nav>
+<!-- Floating Action Button (Optional Contextual FAB) - Not rendered on Profile per rule -->
+</body></html>

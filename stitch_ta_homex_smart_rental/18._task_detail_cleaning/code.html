@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Task Detail - Operational Portal</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            font-family: 'Manrope', sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "surface-bright": "#faf9fd",
+                      "tertiary-fixed": "#ffdbcb",
+                      "on-secondary-fixed": "#261900",
+                      "tertiary": "#1e0700",
+                      "on-secondary-container": "#785a1a",
+                      "tertiary-fixed-dim": "#ffb692",
+                      "secondary": "#775a19",
+                      "outline-variant": "#c4c6cf",
+                      "surface-container-lowest": "#ffffff",
+                      "surface-dark": "#0A111F",
+                      "surface-container-low": "#f4f3f7",
+                      "on-error-container": "#93000a",
+                      "on-primary": "#ffffff",
+                      "error-container": "#ffdad6",
+                      "on-tertiary-container": "#bc7b5a",
+                      "on-primary-fixed": "#001b3c",
+                      "primary-container": "#002349",
+                      "surface-container-highest": "#e3e2e6",
+                      "surface-tint": "#455f88",
+                      "on-tertiary": "#ffffff",
+                      "surface-container-high": "#e9e7eb",
+                      "on-tertiary-fixed-variant": "#6c391e",
+                      "tertiary-container": "#401701",
+                      "error": "#ba1a1a",
+                      "primary-fixed-dim": "#adc8f6",
+                      "on-surface": "#1a1c1e",
+                      "on-background": "#1a1c1e",
+                      "outline": "#74777f",
+                      "primary-fixed": "#d5e3ff",
+                      "deep-navy": "#002349",
+                      "inverse-primary": "#adc8f6",
+                      "primary": "#000d22",
+                      "on-secondary": "#ffffff",
+                      "on-error": "#ffffff",
+                      "antique-gold": "#C5A059",
+                      "warning-amber": "#F2994A",
+                      "on-secondary-fixed-variant": "#5d4201",
+                      "secondary-fixed": "#ffdea5",
+                      "surface-variant": "#e3e2e6",
+                      "on-tertiary-fixed": "#341100",
+                      "secondary-container": "#fed488",
+                      "background": "#faf9fd",
+                      "surface-container": "#eeedf1",
+                      "secondary-fixed-dim": "#e9c176",
+                      "inverse-surface": "#2f3033",
+                      "on-primary-fixed-variant": "#2c476f",
+                      "inverse-on-surface": "#f1f0f4",
+                      "surface": "#faf9fd",
+                      "surface-dim": "#dad9dd",
+                      "on-primary-container": "#718bb7",
+                      "success-green": "#27AE60",
+                      "on-surface-variant": "#43474e"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "stack-sm": "8px",
+                      "gutter": "16px",
+                      "margin-desktop": "32px",
+                      "stack-lg": "24px",
+                      "margin-mobile": "16px",
+                      "base": "8px",
+                      "stack-md": "16px"
+              },
+              "fontFamily": {
+                      "headline-md": ["Manrope"],
+                      "label-lg": ["Manrope"],
+                      "display-lg": ["Manrope"],
+                      "body-sm": ["Manrope"],
+                      "body-md": ["Manrope"],
+                      "label-sm": ["Manrope"],
+                      "headline-lg": ["Manrope"],
+                      "body-lg": ["Manrope"],
+                      "headline-sm": ["Manrope"]
+              },
+              "fontSize": {
+                      "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                      "label-lg": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                      "display-lg": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                      "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                      "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.04em", "fontWeight": "500"}],
+                      "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                      "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                      "headline-sm": ["20px", {"lineHeight": "28px", "fontWeight": "600"}]
+              }
+            },
+          },
+        }
+      </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface-bright text-on-surface">
+<!-- TopAppBar Component -->
+<header class="fixed top-0 w-full bg-surface-bright dark:bg-surface-dark shadow-sm flex justify-between items-center px-4 h-16 w-full z-50">
+<div class="flex items-center gap-stack-md">
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer">arrow_back</span>
+<h1 class="font-headline-sm text-headline-sm font-bold text-deep-navy dark:text-primary-fixed">Task Details</h1>
+</div>
+<div class="flex items-center gap-stack-md">
+<span class="material-symbols-outlined text-primary dark:text-primary-fixed-dim cursor-pointer">notifications</span>
+<div class="w-8 h-8 rounded-full overflow-hidden border border-outline-variant">
+<img alt="Staff member profile photo" class="w-full h-full object-cover" data-alt="A professional headshot of a female staff member with a friendly expression, set against a soft-focus office background. The lighting is bright and natural, reflecting a clean and modern corporate aesthetic. The overall mood is professional, dependable, and high-end, consistent with a luxury residential service team member portrait." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBRQ2J2wOoErgt827QtjchaBDSb9ahmZlDqQkTo67TyIhVzchIPu6mp5DDzROVVLPA1v4LNgzUqZxaftvy3u16aWDMsyNYA9chmYbju8q167eUAQ_U7TJpJhNGwo3N6_6EZrLQC_F9K4WLWczh_ORhEGGqWzsr_EBSV8NrEdpYVVJ1PWG6tmup4N87A8g3jcBok5ZhDIAInuPAF9_cg1ykpWIgdOtW6aXNuyWn460KBgcqd6yGxd47cX3Uzc2NXos3HnaFDL4RY5ow"/>
+</div>
+</div>
+</header>
+<main class="pt-20 pb-24 px-gutter max-w-5xl mx-auto space-y-stack-lg">
+<!-- Hero Information Section -->
+<section class="bg-surface-container-lowest rounded-xl p-gutter shadow-[0_4px_20px_rgba(0,0,0,0.04)] border border-outline-variant/30">
+<div class="flex flex-col md:flex-row md:items-start justify-between gap-gutter">
+<div class="space-y-stack-sm">
+<span class="inline-block px-3 py-1 bg-secondary-container text-on-secondary-container rounded-full text-label-sm font-label-sm uppercase tracking-wider">In Progress</span>
+<h2 class="font-headline-md text-headline-md text-deep-navy">Unit 14B: Deep Clean &amp; Sanitize</h2>
+<div class="flex items-center gap-2 text-on-surface-variant">
+<span class="material-symbols-outlined text-antique-gold">location_on</span>
+<span class="font-body-md text-body-md">The Sterling Residences, Tower A, Level 14</span>
+</div>
+</div>
+<div class="text-right flex flex-col items-end">
+<div class="text-on-surface-variant text-label-sm font-label-sm">DUE BY</div>
+<div class="text-deep-navy font-headline-sm text-headline-sm">14:30 PM</div>
+<div class="text-on-surface-variant text-body-sm">Today, Oct 24</div>
+</div>
+</div>
+</section>
+<!-- Bento Grid: Details & Notes -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-stack-lg">
+<!-- Manager Notes -->
+<div class="md:col-span-2 bg-surface-container-low rounded-xl p-gutter space-y-stack-md border border-outline-variant/20">
+<div class="flex items-center gap-stack-sm text-deep-navy">
+<span class="material-symbols-outlined">description</span>
+<h3 class="font-headline-sm text-headline-sm">Manager's Notes</h3>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant italic leading-relaxed">
+                    "High-priority turnaround for VIP guest arrival at 4 PM. Please pay special attention to the balcony glass and ensure the smart lighting system is set to 'Welcome Home' mode after cleaning. The master bathroom floor marble requires PH-neutral cleaner."
+                </p>
+<div class="flex items-center gap-2 mt-4">
+<img alt="Manager avatar" class="w-6 h-6 rounded-full object-cover" data-alt="A portrait of a male operations manager in a professional dark navy suit, looking confident and composed. The setting is a minimalist, modern lobby with subtle gold accents and soft architectural lighting. The image conveys luxury, authority, and meticulous attention to detail." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAC5v3djWBLW5KaOnD_EjAu-p4dDYD6DU6-RBAaa9Eo-F-2jkp-lBpzGvYj00S52k68f0LcW-xjcW7X1aV5gjASrBtGkKzmUbAefyqgEhsODRpTgpTkdiahGpEsiUvqzG6jnzb9V4TzQOb59mO_R6Q0owY329gpMCgwLem6U4h0OzHeYboy7AiVojoTbeqes4tanh5DZYtDikvjz5GcJ0Kvlb2UJtH5ss501YC1d6mdotT9SwqRJxOfO53TyRSkyQOiysCj-OPRRJE"/>
+<span class="text-label-sm font-label-sm text-on-surface-variant">— Marcus Vane, Lead Operations</span>
+</div>
+</div>
+<!-- Property Snapshot -->
+<div class="bg-primary-container text-on-primary-container rounded-xl overflow-hidden shadow-lg flex flex-col">
+<div class="h-32 w-full relative">
+<img alt="Apartment Interior" class="w-full h-full object-cover" data-alt="A luxurious, sun-drenched modern apartment interior with floor-to-ceiling windows showing a city skyline. The room features high-end minimalist furniture, polished hardwood floors, and a sophisticated neutral color palette with gold highlights. The lighting is soft and airy, emphasizing a premium residential lifestyle." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCGKo_GQ3CizPSQnsnLBTJ-0WB4Zo5hpY4BTIFBVbJZoqix-bnQDCxJvRoJjGlkQ8-FqH03Yh4Gi2JM7daj7RwsiOoU1cktP4kPbeDD0coxWQmqzFpyH65YZltAu_cQPksKdX4k82tiFrclycXDHhf1ck6Q1tqHrIgi8vBeLFOtIjIxpusW5m9QR2g-mAn2O_EqHmOeMPLJNJ-6qoNuAbkWzXgmQvRQeUDQ87jNy1auTTPgKtVpT7IY0Qno4cCXrFYkGIgnncawBG0"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary-container to-transparent"></div>
+</div>
+<div class="p-4 space-y-2">
+<h4 class="font-label-lg text-label-lg text-primary-fixed">Access Code</h4>
+<div class="bg-surface-dark/40 p-3 rounded-lg border border-primary/30 flex items-center justify-between">
+<span class="font-headline-sm text-headline-sm tracking-widest text-white">4829 #</span>
+<span class="material-symbols-outlined text-antique-gold cursor-pointer">content_copy</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Task Checklist Section -->
+<section class="space-y-stack-md">
+<h3 class="font-headline-sm text-headline-sm text-deep-navy px-1">Detailed Checklist</h3>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<!-- Checklist Items -->
+<div class="bg-surface-container-lowest border border-outline-variant/30 rounded-xl p-4 flex items-center gap-4 transition-all hover:bg-surface-container-low group">
+<div class="w-6 h-6 rounded border-2 border-antique-gold flex items-center justify-center cursor-pointer group-hover:bg-antique-gold/10">
+<span class="material-symbols-outlined text-antique-gold text-[18px] opacity-0 group-hover:opacity-100">check</span>
+</div>
+<div class="flex-1">
+<p class="font-body-md text-body-md text-on-surface">Change all linens and towels</p>
+<p class="text-label-sm text-on-surface-variant">Egypt Cotton Set - Master Bedroom</p>
+</div>
+</div>
+<div class="bg-surface-container-lowest border border-outline-variant/30 rounded-xl p-4 flex items-center gap-4 transition-all hover:bg-surface-container-low group">
+<div class="w-6 h-6 rounded border-2 border-antique-gold flex items-center justify-center cursor-pointer">
+<span class="material-symbols-outlined text-antique-gold text-[18px] opacity-0">check</span>
+</div>
+<div class="flex-1">
+<p class="font-body-md text-body-md text-on-surface">Sanitize all high-touch surfaces</p>
+<p class="text-label-sm text-on-surface-variant">Knobs, remotes, switches, handles</p>
+</div>
+</div>
+<div class="bg-surface-container-lowest border border-outline-variant/30 rounded-xl p-4 flex items-center gap-4 transition-all hover:bg-surface-container-low group">
+<div class="w-6 h-6 rounded border-2 border-antique-gold bg-antique-gold flex items-center justify-center cursor-pointer">
+<span class="material-symbols-outlined text-white text-[18px]">check</span>
+</div>
+<div class="flex-1">
+<p class="font-body-md text-body-md text-on-surface line-through opacity-50">Refill bathroom amenities</p>
+<p class="text-label-sm text-on-surface-variant opacity-50">Aesop Collection - Full Set</p>
+</div>
+</div>
+<div class="bg-surface-container-lowest border border-outline-variant/30 rounded-xl p-4 flex items-center gap-4 transition-all hover:bg-surface-container-low group">
+<div class="w-6 h-6 rounded border-2 border-antique-gold flex items-center justify-center cursor-pointer">
+<span class="material-symbols-outlined text-antique-gold text-[18px] opacity-0">check</span>
+</div>
+<div class="flex-1">
+<p class="font-body-md text-body-md text-on-surface">Verify Smart Home Hub Status</p>
+<p class="text-label-sm text-on-surface-variant">Ensure 'Welcome' scene is active</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Photo Documentation -->
+<section class="space-y-stack-md">
+<h3 class="font-headline-sm text-headline-sm text-deep-navy px-1">Proof of Performance</h3>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+<!-- Upload Slot: Before -->
+<div class="aspect-square rounded-xl border-2 border-dashed border-outline-variant flex flex-col items-center justify-center gap-2 bg-surface-container hover:bg-surface-container-high transition-colors cursor-pointer overflow-hidden">
+<img alt="Before photo" class="w-full h-full object-cover opacity-60" data-alt="A wide shot of a luxury hotel bathroom before cleaning, with used towels and amenities visible. The room is spacious with marble tiling and high-end fixtures. The lighting is realistic and professional, maintaining the premium brand aesthetic through high-quality photography and composition." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB1dtTaGVxWQWpGtZB267EMeV1baGValh_jCna6s6ocj4HD3DjLmLVFSSixWeRdqmpgnsiH8UrRIR02Rst6PPU_XuGYpZTeu4dLkigYeUtqW5HzswUdhqPe-DN4bhcDflRdWV5XyqXqrrSJ6yh8CGY-DcWJ9ZRI4oAYWMuZ_NCQNwyHAAJvizmq-R9lbbblPKEAAVDD4CMDnFflGg3FxMXglst_96z74AfL-ZSpkW4dle5ZdkaybEBFuSb8tCHSns0msfG_1m2DUfk"/>
+<div class="absolute flex flex-col items-center pointer-events-none">
+<span class="material-symbols-outlined text-deep-navy">add_a_photo</span>
+<span class="text-label-sm font-label-sm text-deep-navy uppercase">Before</span>
+</div>
+</div>
+<!-- Upload Slot: After (Placeholder) -->
+<div class="aspect-square rounded-xl border-2 border-dashed border-outline-variant flex flex-col items-center justify-center gap-2 bg-surface-container-low hover:bg-surface-container-high transition-colors cursor-pointer">
+<span class="material-symbols-outlined text-outline">camera_enhance</span>
+<span class="text-label-sm font-label-sm text-on-surface-variant uppercase">Add After</span>
+</div>
+<!-- Additional Photo Slot -->
+<div class="aspect-square rounded-xl border-2 border-dashed border-outline-variant flex flex-col items-center justify-center gap-2 bg-surface-container-low hover:bg-surface-container-high transition-colors cursor-pointer">
+<span class="material-symbols-outlined text-outline">add</span>
+<span class="text-label-sm font-label-sm text-on-surface-variant uppercase">Detail</span>
+</div>
+</div>
+</section>
+<!-- Action Button -->
+<div class="pt-stack-lg">
+<button class="w-full bg-deep-navy text-white h-14 rounded-xl font-label-lg text-label-lg flex items-center justify-center gap-2 active:scale-[0.98] transition-all hover:bg-primary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">verified</span>
+                Mark Task as Completed
+            </button>
+</div>
+</main>
+<!-- BottomNavBar Component -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 py-2 pb-safe bg-surface-bright dark:bg-surface-dark border-t border-outline-variant dark:border-outline shadow-[0_-4px_20px_rgba(0,0,0,0.04)]">
+<div class="flex flex-col items-center justify-center text-deep-navy dark:text-antique-gold font-bold relative after:content-[''] after:absolute after:-bottom-1 after:w-1 after:h-1 after:bg-antique-gold after:rounded-full active:scale-95 transition-transform duration-150 cursor-pointer">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">assignment</span>
+<span class="font-label-sm text-label-sm">Tasks</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline hover:opacity-80 active:scale-95 transition-transform duration-150 cursor-pointer">
+<span class="material-symbols-outlined">calendar_today</span>
+<span class="font-label-sm text-label-sm">Schedule</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline hover:opacity-80 active:scale-95 transition-transform duration-150 cursor-pointer">
+<span class="material-symbols-outlined">chat_bubble</span>
+<span class="font-label-sm text-label-sm">Inbox</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline hover:opacity-80 active:scale-95 transition-transform duration-150 cursor-pointer">
+<span class="material-symbols-outlined">person</span>
+<span class="font-label-sm text-label-sm">Profile</span>
+</div>
+</nav>
+</body></html>

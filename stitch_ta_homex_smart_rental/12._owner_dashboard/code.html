@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Owner Dashboard - TA HomeX</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                "primary-fixed-dim": "#adc8f6",
+                "on-primary-container": "#718bb7",
+                "surface-container-lowest": "#ffffff",
+                "tertiary-fixed": "#ffdbcb",
+                "surface-bright": "#faf9fd",
+                "primary-container": "#002349",
+                "on-background": "#1a1c1e",
+                "surface-container-low": "#f4f3f7",
+                "antique-gold": "#C5A059",
+                "outline-variant": "#c4c6cf",
+                "primary": "#000d22",
+                "on-tertiary-fixed": "#341100",
+                "secondary-fixed": "#ffdea5",
+                "on-tertiary": "#ffffff",
+                "on-secondary-fixed": "#261900",
+                "inverse-on-surface": "#f1f0f4",
+                "surface-container-highest": "#e3e2e6",
+                "on-tertiary-fixed-variant": "#6c391e",
+                "surface-container": "#eeedf1",
+                "background": "#faf9fd",
+                "error": "#ba1a1a",
+                "inverse-surface": "#2f3033",
+                "surface-dark": "#0A111F",
+                "success-green": "#27AE60",
+                "outline": "#74777f",
+                "tertiary-container": "#401701",
+                "secondary": "#775a19",
+                "surface-dim": "#dad9dd",
+                "on-error-container": "#93000a",
+                "on-error": "#ffffff",
+                "secondary-container": "#fed488",
+                "surface-container-high": "#e9e7eb",
+                "on-surface-variant": "#43474e",
+                "warning-amber": "#F2994A",
+                "on-surface": "#1a1c1e",
+                "on-secondary-container": "#785a1a",
+                "on-primary-fixed-variant": "#2c476f",
+                "on-secondary-fixed-variant": "#5d4201",
+                "surface-variant": "#e3e2e6",
+                "on-secondary": "#ffffff",
+                "on-tertiary-container": "#bc7b5a",
+                "on-primary": "#ffffff",
+                "tertiary-fixed-dim": "#ffb692",
+                "secondary-fixed-dim": "#e9c176",
+                "inverse-primary": "#adc8f6",
+                "error-container": "#ffdad6",
+                "surface-tint": "#455f88",
+                "primary-fixed": "#d5e3ff",
+                "surface": "#faf9fd",
+                "on-primary-fixed": "#001b3c",
+                "deep-navy": "#002349",
+                "tertiary": "#1e0700"
+            },
+            "borderRadius": {
+                "DEFAULT": "0.25rem",
+                "lg": "0.5rem",
+                "xl": "0.75rem",
+                "full": "9999px"
+            },
+            "spacing": {
+                "stack-md": "16px",
+                "margin-desktop": "32px",
+                "stack-sm": "8px",
+                "gutter": "16px",
+                "margin-mobile": "16px",
+                "base": "8px",
+                "stack-lg": "24px"
+            },
+            "fontFamily": {
+                "body-sm": ["Manrope"],
+                "headline-lg": ["Manrope"],
+                "body-lg": ["Manrope"],
+                "body-md": ["Manrope"],
+                "display-lg": ["Manrope"],
+                "label-lg": ["Manrope"],
+                "headline-sm": ["Manrope"],
+                "label-sm": ["Manrope"],
+                "headline-md": ["Manrope"]
+            },
+            "fontSize": {
+                "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                "display-lg": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                "label-lg": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                "headline-sm": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.04em", "fontWeight": "500"}],
+                "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .active-nav-indicator::after {
+            content: '';
+            width: 4px;
+            height: 4px;
+            background-color: #C5A059;
+            border-radius: 50%;
+            margin-top: 4px;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface font-body-md antialiased">
+<!-- Top Navigation Bar -->
+<header class="bg-surface dark:bg-surface-dark flex justify-between items-center px-margin-mobile h-16 w-full sticky top-0 z-50">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-surface-container-high overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A professional portrait of a confident male real estate investor in his late 40s. He is wearing a tailored navy blazer and a crisp white shirt. The background is a soft-focus luxury penthouse interior with warm evening lighting, reflecting a premium and successful lifestyle. The aesthetic is clean, sharp, and sophisticated with rich tonal depth." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCGj9kZATOtQylAKli2qkQgN-z_uQc_VGgRCh5tPTMW24-V0rxkhGOGlwXoqq8YeuBdF3EGjUkpzkME3or7c-N-M-cZ7OPCcbzuSwCwI6EzP23Cvs-Z0eASIRZufjlxcMVneQ54SlSIxhbzmVCf8t-o30irOz93BYi5rdDrZqXoAzta4FPEYZMEIeeP3rP9lGDr4XsoRuZigCF9WVGDdKSCuvlVHOQLgN048dYMY78OSMcxNdq_JyaIRakDMDkmqht0ptQIHemdN9I"/>
+</div>
+<div class="flex flex-col">
+<span class="font-label-lg text-label-lg text-on-surface-variant">Welcome back,</span>
+<span class="font-headline-sm text-headline-sm text-deep-navy font-bold">Owner 🔑</span>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="w-10 h-10 flex items-center justify-center rounded-full bg-surface-container hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="notifications">notifications</span>
+</button>
+</div>
+</header>
+<main class="px-margin-mobile pb-32 pt-stack-md max-w-4xl mx-auto">
+<h1 class="font-display-lg text-headline-sm tracking-tight text-deep-navy mb-stack-lg">Owner Dashboard</h1>
+<!-- High-Level Stats Bento Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-stack-md mb-stack-lg">
+<!-- Total Revenue Card -->
+<div class="bg-deep-navy text-white p-6 rounded-xl shadow-lg relative overflow-hidden flex flex-col justify-between min-h-[160px]">
+<div class="flex justify-between items-start z-10">
+<span class="font-label-lg text-on-primary-container text-white opacity-80 uppercase tracking-widest">Total Revenue</span>
+<span class="material-symbols-outlined text-antique-gold" data-icon="payments">payments</span>
+</div>
+<div class="z-10">
+<div class="font-display-lg text-display-lg mb-1">125.800.000 <span class="text-body-sm opacity-70">VND</span></div>
+<div class="flex items-center gap-1 text-success-green font-label-lg">
+<span class="material-symbols-outlined text-sm" data-icon="trending_up">trending_up</span>
+                        +12.5% vs last month
+                    </div>
+</div>
+<!-- Abstract Background Ornament -->
+<div class="absolute -right-8 -bottom-8 w-32 h-32 bg-antique-gold/10 rounded-full blur-2xl"></div>
+</div>
+<!-- Occupancy Rate Card -->
+<div class="bg-white border border-outline-variant/30 p-6 rounded-xl shadow-sm flex flex-col justify-between min-h-[160px]">
+<div class="flex justify-between items-start">
+<span class="font-label-lg text-on-surface-variant uppercase tracking-widest">Occupancy Rate</span>
+<div class="w-10 h-10 rounded-full bg-secondary-container/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-secondary" data-icon="bed">bed</span>
+</div>
+</div>
+<div class="flex items-end justify-between">
+<div>
+<div class="font-display-lg text-display-lg text-deep-navy">78%</div>
+<div class="text-success-green font-label-lg flex items-center gap-1">
+<span class="material-symbols-outlined text-sm" data-icon="arrow_upward">arrow_upward</span>
+                            +8%
+                        </div>
+</div>
+<!-- Radial Progress Mini -->
+<div class="relative w-16 h-16 flex items-center justify-center">
+<svg class="w-full h-full transform -rotate-90">
+<circle class="text-surface-container-high" cx="32" cy="32" fill="transparent" r="28" stroke="currentColor" stroke-width="6"></circle>
+<circle class="text-antique-gold" cx="32" cy="32" fill="transparent" r="28" stroke="currentColor" stroke-dasharray="176" stroke-dashoffset="38" stroke-width="6"></circle>
+</svg>
+<span class="absolute text-[10px] font-bold text-deep-navy">78%</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Performance Chart & Task Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-stack-md">
+<!-- Monthly Performance Bar Chart (2/3 width) -->
+<div class="lg:col-span-2 bg-white border border-outline-variant/30 p-6 rounded-xl shadow-sm">
+<div class="flex justify-between items-center mb-6">
+<h2 class="font-headline-sm text-headline-sm text-deep-navy">Performance</h2>
+<select class="bg-surface-container border-none text-body-sm rounded-lg px-3 py-1 focus:ring-antique-gold">
+<option>Last 6 Months</option>
+<option>Last Year</option>
+</select>
+</div>
+<!-- Mock Bar Chart -->
+<div class="flex items-end justify-between h-48 gap-3 pt-4">
+<div class="flex flex-col items-center flex-1 group">
+<div class="w-full bg-surface-container-high rounded-t-lg transition-all group-hover:bg-primary-container h-[40%]"></div>
+<span class="text-[10px] mt-2 text-on-surface-variant font-label-sm">JAN</span>
+</div>
+<div class="flex flex-col items-center flex-1 group">
+<div class="w-full bg-surface-container-high rounded-t-lg transition-all group-hover:bg-primary-container h-[55%]"></div>
+<span class="text-[10px] mt-2 text-on-surface-variant font-label-sm">FEB</span>
+</div>
+<div class="flex flex-col items-center flex-1 group">
+<div class="w-full bg-surface-container-high rounded-t-lg transition-all group-hover:bg-primary-container h-[45%]"></div>
+<span class="text-[10px] mt-2 text-on-surface-variant font-label-sm">MAR</span>
+</div>
+<div class="flex flex-col items-center flex-1 group">
+<div class="w-full bg-surface-container-high rounded-t-lg transition-all group-hover:bg-primary-container h-[70%]"></div>
+<span class="text-[10px] mt-2 text-on-surface-variant font-label-sm">APR</span>
+</div>
+<div class="flex flex-col items-center flex-1 group">
+<div class="w-full bg-antique-gold rounded-t-lg h-[90%] shadow-lg shadow-antique-gold/20"></div>
+<span class="text-[10px] mt-2 text-deep-navy font-bold font-label-sm">MAY</span>
+</div>
+<div class="flex flex-col items-center flex-1 group opacity-40">
+<div class="w-full bg-surface-container-high rounded-t-lg h-[20%]"></div>
+<span class="text-[10px] mt-2 text-on-surface-variant font-label-sm">JUN</span>
+</div>
+</div>
+</div>
+<!-- Today's Tasks (1/3 width) -->
+<div class="bg-white border border-outline-variant/30 p-6 rounded-xl shadow-sm">
+<h2 class="font-headline-sm text-headline-sm text-deep-navy mb-6">Today's Tasks</h2>
+<div class="space-y-4">
+<!-- Check-in Task -->
+<div class="flex items-center gap-4 p-3 bg-primary-container/5 rounded-lg border border-primary-container/10">
+<div class="w-12 h-12 rounded-full bg-white flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-primary-container font-bold" data-icon="login">login</span>
+</div>
+<div>
+<div class="font-headline-sm text-headline-sm text-deep-navy">5</div>
+<div class="text-body-sm text-on-surface-variant">Check-ins</div>
+</div>
+</div>
+<!-- Check-out Task -->
+<div class="flex items-center gap-4 p-3 bg-secondary-container/5 rounded-lg border border-secondary-container/10">
+<div class="w-12 h-12 rounded-full bg-white flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-secondary font-bold" data-icon="logout">logout</span>
+</div>
+<div>
+<div class="font-headline-sm text-headline-sm text-secondary">3</div>
+<div class="text-body-sm text-on-surface-variant">Check-outs</div>
+</div>
+</div>
+<!-- Cleaning Task -->
+<div class="flex items-center gap-4 p-3 bg-surface-container-low rounded-lg">
+<div class="w-12 h-12 rounded-full bg-white flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-outline" data-icon="cleaning_services">cleaning_services</span>
+</div>
+<div>
+<div class="font-headline-sm text-headline-sm text-deep-navy">4</div>
+<div class="text-body-sm text-on-surface-variant">Cleanings</div>
+</div>
+</div>
+</div>
+<button class="w-full mt-6 py-3 rounded-lg border border-outline text-on-surface-variant font-label-lg hover:bg-surface-container-low transition-colors">
+                    View All Tasks
+                </button>
+</div>
+</div>
+<!-- Property List Preview -->
+<section class="mt-stack-lg">
+<div class="flex justify-between items-center mb-4">
+<h2 class="font-headline-md text-headline-md text-deep-navy">Active Properties</h2>
+<a class="text-antique-gold font-label-lg hover:underline" href="#">Manage All</a>
+</div>
+<div class="flex flex-col gap-4">
+<!-- Property Item 1 -->
+<div class="flex items-center gap-4 p-4 bg-white border border-outline-variant/30 rounded-xl hover:shadow-md transition-shadow cursor-pointer">
+<img class="w-20 h-20 rounded-lg object-cover" data-alt="A luxurious, high-end modern villa with floor-to-ceiling glass windows at twilight. The interior lighting is warm and inviting, casting a golden glow over a sleek infinity pool. The architectural design is minimalist with clean lines and premium materials like marble and dark wood. The atmosphere is quiet, exclusive, and peaceful." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAKCdpFLl-bUbB_tR839ZeiGhi-zja9CnonmX9MKNc1J1b-5vsJpUTV_afxVsvQ-YCEIFEkp-fs7ZK0OidHE5JrkMDoOyUT-W6pVDhYINGIime8vDAfnAur2ZGPH3UK6fphzofCeNB24eUuxF_vod32BV4X8CAsx9LKmrnFB-r0VSg0w6dqYat5GpeMjtowFhx_7cwdgG97yBm5DYFCQNvhds8rZctrIt-v6nMP5Rt9DNLBg_pNxFXsN1RCVItbU3Op27UIYMFSJF4"/>
+<div class="flex-1">
+<h3 class="font-headline-sm text-headline-sm text-deep-navy">TA HomeX Landmark</h3>
+<p class="text-body-sm text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-xs" data-icon="location_on">location_on</span>
+                            Binh Thanh District, HCMC
+                        </p>
+</div>
+<div class="text-right">
+<div class="inline-flex items-center px-2 py-1 bg-success-green/10 text-success-green rounded-full text-[10px] font-bold uppercase mb-1">Active</div>
+<div class="text-body-sm font-bold text-deep-navy">78% Full</div>
+</div>
+</div>
+<!-- Property Item 2 -->
+<div class="flex items-center gap-4 p-4 bg-white border border-outline-variant/30 rounded-xl hover:shadow-md transition-shadow cursor-pointer">
+<img class="w-20 h-20 rounded-lg object-cover" data-alt="A modern urban apartment interior with a sophisticated grayscale palette and antique gold accents. High ceilings and large industrial-style windows overlooking a metropolitan cityscape at dawn. The furniture is contemporary and minimalist, emphasizing open space and high-tech security features integrated into the design." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAXcYnApgVVurkFIGyo4VZ1XZwl5f4icH6CeaGyUPdh_kEaZKIBHREX0md1NAcigAB9YRnL4T40P0jMN0aKL409HzI-9wCNrb_mh5gei4dqQ-fMkD0d0PNgBmPv7YRXf8erfPjF7bNztoadASGoUvZz90dyURUteBqe0hfW5i7UN9yrjouqRcbhcUyolh0A7CZsbsGXoJSMyccTVspBjCinbf9f1ZLdn-1-MKm3rRWoKirbIBXViOfxScDAIboEM3jjnLkDdLw9By0"/>
+<div class="flex-1">
+<h3 class="font-headline-sm text-headline-sm text-deep-navy">TA HomeX Rivergate</h3>
+<p class="text-body-sm text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-xs" data-icon="location_on">location_on</span>
+                            District 4, HCMC
+                        </p>
+</div>
+<div class="text-right">
+<div class="inline-flex items-center px-2 py-1 bg-success-green/10 text-success-green rounded-full text-[10px] font-bold uppercase mb-1">Active</div>
+<div class="text-body-sm font-bold text-deep-navy">65% Full</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Bottom Navigation Bar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-safe h-20 bg-surface/90 dark:bg-surface-dark/90 backdrop-blur-md border-t border-outline-variant/30 shadow-lg rounded-t-xl">
+<a class="flex flex-col items-center justify-center text-deep-navy relative active-nav-indicator scale-90 transition-all duration-200 ease-out" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard" style="font-variation-settings: 'FILL' 1;">dashboard</span>
+<span class="font-label-sm text-[10px]">Dashboard</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="domain">domain</span>
+<span class="font-label-sm text-[10px]">Properties</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="calendar_month">calendar_month</span>
+<span class="font-label-sm text-[10px]">Calendar</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="bar_chart">bar_chart</span>
+<span class="font-label-sm text-[10px]">Revenue</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="more_horiz">more_horiz</span>
+<span class="font-label-sm text-[10px]">More</span>
+</a>
+</nav>
+<!-- Floating Action Button - Only for Primary Action -->
+<button class="fixed bottom-24 right-6 w-14 h-14 bg-antique-gold text-primary shadow-xl rounded-full flex items-center justify-center hover:scale-105 active:scale-95 transition-transform z-40">
+<span class="material-symbols-outlined text-white font-bold text-3xl" data-icon="add">add</span>
+</button>
+</body></html>

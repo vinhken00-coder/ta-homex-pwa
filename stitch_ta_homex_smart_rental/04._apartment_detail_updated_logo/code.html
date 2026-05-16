@@ -1,0 +1,265 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>TA HomeX | Property Details</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "warning-amber": "#F2994A",
+            "on-error-container": "#93000a",
+            "surface-bright": "#faf9fd",
+            "on-secondary-container": "#785a1a",
+            "on-secondary": "#ffffff",
+            "tertiary-fixed-dim": "#ffb692",
+            "error": "#ba1a1a",
+            "inverse-primary": "#adc8f6",
+            "outline-variant": "#c4c6cf",
+            "tertiary": "#1e0700",
+            "on-tertiary": "#ffffff",
+            "on-background": "#1a1c1e",
+            "success-green": "#27AE60",
+            "on-primary-fixed": "#001b3c",
+            "inverse-on-surface": "#f1f0f4",
+            "surface-dark": "#0A111F",
+            "surface-tint": "#455f88",
+            "primary-fixed-dim": "#adc8f6",
+            "inverse-surface": "#2f3033",
+            "antique-gold": "#C5A059",
+            "surface-dim": "#dad9dd",
+            "primary": "#000d22",
+            "on-tertiary-fixed-variant": "#6c391e",
+            "secondary-fixed-dim": "#e9c176",
+            "secondary-fixed": "#ffdea5",
+            "secondary-container": "#fed488",
+            "outline": "#74777f",
+            "on-error": "#ffffff",
+            "on-surface-variant": "#43474e",
+            "on-primary-fixed-variant": "#2c476f",
+            "on-surface": "#1a1c1e",
+            "deep-navy": "#002349",
+            "on-secondary-fixed-variant": "#5d4201",
+            "on-secondary-fixed": "#261900",
+            "on-primary-container": "#718bb7",
+            "primary-container": "#002349",
+            "surface-container-low": "#f4f3f7",
+            "tertiary-fixed": "#ffdbcb",
+            "secondary": "#775a19",
+            "on-primary": "#ffffff",
+            "primary-fixed": "#d5e3ff",
+            "tertiary-container": "#401701",
+            "on-tertiary-container": "#bc7b5a",
+            "surface-container-lowest": "#ffffff",
+            "surface-container-high": "#e9e7eb",
+            "surface": "#faf9fd",
+            "surface-container": "#eeedf1",
+            "background": "#faf9fd",
+            "on-tertiary-fixed": "#341100",
+            "surface-container-highest": "#e3e2e6",
+            "surface-variant": "#e3e2e6",
+            "error-container": "#ffdad6"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "base": "8px",
+            "margin-desktop": "32px",
+            "stack-lg": "24px",
+            "gutter": "16px",
+            "stack-sm": "8px",
+            "stack-md": "16px",
+            "margin-mobile": "16px"
+          },
+          "fontFamily": {
+            "label-lg": ["Manrope"],
+            "body-md": ["Manrope"],
+            "headline-lg": ["Manrope"],
+            "display-lg": ["Manrope"],
+            "body-sm": ["Manrope"],
+            "headline-md": ["Manrope"],
+            "headline-sm": ["Manrope"],
+            "body-lg": ["Manrope"],
+            "label-sm": ["Manrope"]
+          },
+          "fontSize": {
+            "label-lg": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600"}],
+            "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+            "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+            "display-lg": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+            "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+            "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+            "headline-sm": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+            "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+            "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.04em", "fontWeight": "500"}]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+    .hide-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .hide-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+    /* Material symbol weight override */
+    .fill-icon {
+      font-variation-settings: 'FILL' 1;
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="bg-background text-on-surface font-body-md selection:bg-antique-gold/30">
+<!-- TopAppBar -->
+<header class="flex justify-between items-center px-margin-mobile h-16 w-full sticky top-0 z-50 bg-surface dark:bg-surface-dark">
+<div class="flex items-center gap-4">
+<button class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-surface-container-low transition-colors">
+<span class="material-symbols-outlined text-primary dark:text-primary-fixed">arrow_back</span>
+</button>
+
+</div>
+<div class="flex items-center gap-2">
+<button class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-surface-container-low transition-colors">
+<span class="material-symbols-outlined text-primary dark:text-primary-fixed">share</span>
+</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-surface-container-low transition-colors">
+<span class="material-symbols-outlined text-primary dark:text-primary-fixed">favorite</span>
+</button>
+</div>
+</header>
+<main class="max-w-[1280px] mx-auto pb-32">
+<!-- Hero Image Gallery -->
+<section class="relative w-full aspect-[4/3] md:aspect-[21/9] overflow-hidden group">
+<div class="flex h-full w-full overflow-x-auto snap-x snap-mandatory hide-scrollbar">
+<div class="flex-shrink-0 w-full h-full snap-start relative">
+<img class="w-full h-full object-cover" data-alt="A luxury modern high-rise apartment interior featuring floor-to-ceiling windows overlooking a sunset cityscape. The room is decorated in a sophisticated palette of deep navy, antique gold, and creamy whites with premium velvet textures and architectural lighting. The overall mood is prestigious, serene, and technologically advanced, echoing a smart-home hospitality aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBfYKWCfihDAffUzmUPtHsm6B97UXc2LYWGdZlNZpc35ySxD_0alYSLcwRIjTjd_Wxa6w7B11L_X8LTOR0K9yNd8n3e8rX53mol3f7nL-FjkMnTbtWqB2mVAyjirDmT3IcMAdL-UCnQQT-DBLPDH1y7frYZNNb_K63LChm92923d1Raeem3EhVGhcWZ9Jy5Mw_xvwlIh12bnF-8gN4VoWYkhhxrg-Bl44_4kj5vTUpwerxDz9chUyQE5LweGJ4eCj7-ajwUgJPLrWc">
+</div>
+<div class="flex-shrink-0 w-full h-full snap-start relative">
+<img class="w-full h-full object-cover" data-alt="A close-up view of a high-end designer bedroom in a premium urban apartment. The bed features crisp white linens, navy silk pillows, and a gold-accented headboard. The lighting is soft and warm, highlighting the minimalist architectural details and luxurious finishes. The atmosphere is quiet, secure, and impeccably clean." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBYrA1p445dYdcGptprBW_M0wqGebD8abxeNy3fSWAf-UbkHgh_vI3CxNrMJvSyasTRJhPptWHNXU5tWyadnkjOu_GmCx3wYSPU7c4odN6tIqCU688LrstFfYAuP8vIrFChFS04Eoiih9fXHVIMI1eLS5RwhDlsCN8kamesdmHbIItTd8Kx7tRczepeg-EFJo8ewAOu67I858wbowNekScbyYP9_yPFhRMMJYiSAlOylnrpjwojK5wmSnU2tXAZs2_jmFGITk1kKPU">
+</div>
+</div>
+<!-- Image Indicators -->
+<div class="absolute bottom-4 right-4 bg-primary/60 backdrop-blur-md px-3 py-1 rounded-full text-white font-label-sm text-label-sm">
+        1 / 5
+      </div>
+</section>
+<!-- Property Info -->
+<div class="px-margin-mobile mt-stack-lg">
+<div class="flex justify-between items-start">
+<div>
+<h1 class="font-headline-lg text-headline-lg text-primary">TA HomeX Landmark</h1>
+<p class="font-body-md text-body-md text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">location_on</span>
+            Binh Thanh District, HCMC
+          </p>
+</div>
+<div class="flex items-center gap-1 bg-surface-container-high px-2 py-1 rounded-lg">
+<span class="material-symbols-outlined text-antique-gold fill-icon text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-label-lg text-label-lg text-primary">4.9</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">(256)</span>
+</div>
+</div>
+<!-- Quick Room Overview Chips -->
+<div class="flex flex-wrap gap-2 mt-stack-md">
+<div class="flex items-center gap-2 border border-outline-variant px-4 py-2 rounded-xl bg-surface-container-lowest">
+<span class="material-symbols-outlined text-on-surface-variant">apartment</span>
+<span class="font-label-lg text-label-lg text-on-surface">Entire apartment</span>
+</div>
+<div class="flex items-center gap-2 border border-outline-variant px-4 py-2 rounded-xl bg-surface-container-lowest">
+<span class="material-symbols-outlined text-on-surface-variant">group</span>
+<span class="font-label-lg text-label-lg text-on-surface">2 Guests</span>
+</div>
+<div class="flex items-center gap-2 border border-outline-variant px-4 py-2 rounded-xl bg-surface-container-lowest">
+<span class="material-symbols-outlined text-on-surface-variant">king_bed</span>
+<span class="font-label-lg text-label-lg text-on-surface">1 Bedroom</span>
+</div>
+<div class="flex items-center gap-2 border border-outline-variant px-4 py-2 rounded-xl bg-surface-container-lowest">
+<span class="material-symbols-outlined text-on-surface-variant">bathtub</span>
+<span class="font-label-lg text-label-lg text-on-surface">1 Bathroom</span>
+</div>
+</div>
+<div class="h-[1px] bg-outline-variant/30 my-stack-lg"></div>
+<!-- About Section -->
+<section>
+<h2 class="font-headline-sm text-headline-sm text-primary mb-stack-sm">About this place</h2>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+          Căn hộ cao cấp với view thành phố, đầy đủ tiện nghi, tự động hóa thông minh. Experience seamless living in the heart of the city with our signature Smart Mode controls. <span class="text-primary font-semibold cursor-pointer underline">Read more</span>
+</p>
+</section>
+<div class="h-[1px] bg-outline-variant/30 my-stack-lg"></div>
+<!-- Amenities Section -->
+<section>
+<div class="flex justify-between items-center mb-stack-md">
+<h2 class="font-headline-sm text-headline-sm text-primary">Amenities</h2>
+<button class="text-primary font-label-lg text-label-lg">View all</button>
+</div>
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-gutter">
+<div class="flex items-center gap-3 p-3 rounded-xl hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-primary">wifi</span>
+<span class="font-body-md text-body-md">WiFi</span>
+</div>
+<div class="flex items-center gap-3 p-3 rounded-xl hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-primary">cooking</span>
+<span class="font-body-md text-body-md">Kitchen</span>
+</div>
+<div class="flex items-center gap-3 p-3 rounded-xl hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-primary">lock_open</span>
+<span class="font-body-md text-body-md">Smart Lock</span>
+</div>
+<div class="flex items-center gap-3 p-3 rounded-xl hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-primary">tv</span>
+<span class="font-body-md text-body-md">TV</span>
+</div>
+</div>
+</section>
+<!-- Map Integration Placeholder -->
+<section class="mt-stack-lg">
+<h2 class="font-headline-sm text-headline-sm text-primary mb-stack-sm">Where you'll be</h2>
+<div class="w-full h-48 rounded-2xl overflow-hidden relative group">
+<img class="w-full h-full object-cover" data-alt="A stylized digital map interface showing the central district of Ho Chi Minh City with a clean, light-mode design. Streets are rendered in soft grays and greens, with the TA HomeX Landmark location highlighted by a elegant antique gold pin icon." data-location="Ho Chi Minh City" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAQJRL52EAhbsBf7NZYfHuKO_IhvdQVUHBIyki7Ko72c7onWg61_opGzrucK0GN6puxXq8XOxuuOLWgpHYaSl14c-Ef8cSnGA7aw3NRvzZqEqpXzjQUdpLrVITQTr_7c2HWwzrh09zyiPa_5akBxxt14dT3yYGCcWwWmjcVhFk8qCSM3dgx5rcSLF41jypDcycTM9sY_nknhL4-UWMeNVlcIos5vM56bN06Ysi-CcfpaQ7wWRd4JQmcw0_HSks0sKgE1R-gSpd45m4">
+<div class="absolute inset-0 bg-primary/10 group-hover:bg-transparent transition-colors"></div>
+<button class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-surface text-primary px-4 py-2 rounded-full shadow-lg font-label-lg text-label-lg">
+            Open in Maps
+          </button>
+</div>
+</section>
+</div>
+</main>
+<!-- Sticky Bottom Bar (Booking Shell) -->
+<div class="fixed bottom-0 left-0 w-full z-50 bg-surface/90 dark:bg-surface-dark/90 backdrop-blur-md border-t border-outline-variant/30 px-margin-mobile h-24 flex items-center justify-between pb-safe">
+<div class="flex flex-col">
+<div class="flex items-baseline gap-1">
+<span class="font-headline-md text-headline-md text-primary">1.450.000 VND</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">/ night</span>
+</div>
+<p class="font-label-sm text-label-sm text-antique-gold underline cursor-pointer">View availability</p>
+</div>
+<button class="bg-antique-gold text-white px-10 py-4 rounded-xl font-headline-sm text-headline-sm shadow-md active:scale-95 transition-transform">
+      Book Now
+    </button>
+</div>
+<!-- BottomNavBar (Hidden on desktop as per Shell Layout guidance) -->
+<!-- Note: We suppress global nav here because this is a "Focused Detail" screen with a primary "Book Now" CTA -->
+<!-- Navigation is accessible via the top-bar back arrow or by completing the journey -->
+
+
+</body></html>

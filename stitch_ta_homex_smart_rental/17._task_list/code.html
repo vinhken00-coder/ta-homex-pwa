@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-bright": "#faf9fd",
+                        "tertiary-fixed": "#ffdbcb",
+                        "on-secondary-fixed": "#261900",
+                        "tertiary": "#1e0700",
+                        "on-secondary-container": "#785a1a",
+                        "tertiary-fixed-dim": "#ffb692",
+                        "secondary": "#775a19",
+                        "outline-variant": "#c4c6cf",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-dark": "#0A111F",
+                        "surface-container-low": "#f4f3f7",
+                        "on-error-container": "#93000a",
+                        "on-primary": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "on-tertiary-container": "#bc7b5a",
+                        "on-primary-fixed": "#001b3c",
+                        "primary-container": "#002349",
+                        "surface-container-highest": "#e3e2e6",
+                        "surface-tint": "#455f88",
+                        "on-tertiary": "#ffffff",
+                        "surface-container-high": "#e9e7eb",
+                        "on-tertiary-fixed-variant": "#6c391e",
+                        "tertiary-container": "#401701",
+                        "error": "#ba1a1a",
+                        "primary-fixed-dim": "#adc8f6",
+                        "on-surface": "#1a1c1e",
+                        "on-background": "#1a1c1e",
+                        "outline": "#74777f",
+                        "primary-fixed": "#d5e3ff",
+                        "deep-navy": "#002349",
+                        "inverse-primary": "#adc8f6",
+                        "primary": "#000d22",
+                        "on-secondary": "#ffffff",
+                        "on-error": "#ffffff",
+                        "antique-gold": "#C5A059",
+                        "warning-amber": "#F2994A",
+                        "on-secondary-fixed-variant": "#5d4201",
+                        "secondary-fixed": "#ffdea5",
+                        "surface-variant": "#e3e2e6",
+                        "on-tertiary-fixed": "#341100",
+                        "secondary-container": "#fed488",
+                        "background": "#faf9fd",
+                        "surface-container": "#eeedf1",
+                        "secondary-fixed-dim": "#e9c176",
+                        "inverse-surface": "#2f3033",
+                        "on-primary-fixed-variant": "#2c476f",
+                        "inverse-on-surface": "#f1f0f4",
+                        "surface": "#faf9fd",
+                        "surface-dim": "#dad9dd",
+                        "on-primary-container": "#718bb7",
+                        "success-green": "#27AE60",
+                        "on-surface-variant": "#43474e"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "stack-sm": "8px",
+                        "gutter": "16px",
+                        "margin-desktop": "32px",
+                        "stack-lg": "24px",
+                        "margin-mobile": "16px",
+                        "base": "8px",
+                        "stack-md": "16px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Manrope"],
+                        "label-lg": ["Manrope"],
+                        "display-lg": ["Manrope"],
+                        "body-sm": ["Manrope"],
+                        "body-md": ["Manrope"],
+                        "label-sm": ["Manrope"],
+                        "headline-lg": ["Manrope"],
+                        "body-lg": ["Manrope"],
+                        "headline-sm": ["Manrope"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "label-lg": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                        "display-lg": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.04em", "fontWeight": "500"}],
+                        "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "headline-sm": ["20px", {"lineHeight": "28px", "fontWeight": "600"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            font-family: 'Manrope', sans-serif;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface-bright text-on-surface">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full bg-surface-bright dark:bg-surface-dark shadow-sm flex justify-between items-center px-4 h-16 z-50">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full overflow-hidden border border-outline-variant">
+<img alt="Staff member profile photo" class="w-full h-full object-cover" data-alt="A professional portrait of a confident staff member in a modern office setting. The individual is wearing high-end smart-casual attire. The background is a blurred luxury apartment lobby with warm antique gold lighting and deep navy accents. The atmosphere is professional, intelligent, and prestigious, reflecting a high-tech residential service environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAF2AmiLrpobhVQPA3jpjZ0VrrkwzVur8yiN33tGWxxnG2rC2Ef_eahBUDXcx2z1gN0UE-RNNpVbQEVv-hrfQIv1ZpcCCSuG8WwLToQUBvIUPBqgBkOdz5Q-GTK8S6gdk9oPGGq6dbe_93i_pnrOWW8A3v22Qx0Rji9HNG_0k7wwuyyY-zHPBBhWpESjnidK7rNLJWta8DriKDnRIf43RmqeB7l6Xtdv98GprDv0toWkU3dgRialOpIt0a6eZqaSyWJYdmvNzUPelw"/>
+</div>
+<h1 class="font-headline-md text-headline-md font-bold text-deep-navy dark:text-primary-fixed">Operational Portal</h1>
+</div>
+<div class="flex items-center">
+<button class="p-2 transition-colors duration-200 ease-in-out hover:bg-surface-container-high dark:hover:bg-surface-container-highest rounded-full text-on-surface-variant">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+</div>
+</header>
+<main class="pt-20 pb-24 px-gutter max-w-screen-xl mx-auto">
+<!-- Filter Section -->
+<section class="mb-stack-lg">
+<div class="flex flex-col gap-4">
+<div class="flex flex-col gap-2">
+<h2 class="font-headline-sm text-headline-sm text-deep-navy">Task Overview</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Manage and track your operational assignments.</p>
+</div>
+<!-- Horizontal Filter Chips -->
+<div class="flex flex-col gap-stack-md overflow-x-auto">
+<div class="flex gap-2 whitespace-nowrap pb-2">
+<button class="px-4 py-2 rounded-full bg-deep-navy text-white font-label-lg text-label-lg shadow-sm">All Types</button>
+<button class="px-4 py-2 rounded-full bg-surface-container text-on-surface-variant font-label-lg text-label-lg hover:bg-surface-container-high transition-colors">Cleaning</button>
+<button class="px-4 py-2 rounded-full bg-surface-container text-on-surface-variant font-label-lg text-label-lg hover:bg-surface-container-high transition-colors">Maintenance</button>
+<button class="px-4 py-2 rounded-full bg-surface-container text-on-surface-variant font-label-lg text-label-lg hover:bg-surface-container-high transition-colors">Guest Service</button>
+</div>
+<div class="flex gap-2 whitespace-nowrap">
+<button class="px-4 py-2 rounded-lg border border-outline-variant flex items-center gap-2 font-label-sm text-label-sm text-on-surface-variant hover:bg-surface-container-low transition-colors">
+<span class="material-symbols-outlined text-[18px]" data-icon="pending">pending</span> Pending
+                        </button>
+<button class="px-4 py-2 rounded-lg border border-outline-variant flex items-center gap-2 font-label-sm text-label-sm text-on-surface-variant hover:bg-surface-container-low transition-colors">
+<span class="material-symbols-outlined text-[18px]" data-icon="autorenew">autorenew</span> In Progress
+                        </button>
+<button class="px-4 py-2 rounded-lg border border-outline-variant flex items-center gap-2 font-label-sm text-label-sm text-on-surface-variant hover:bg-surface-container-low transition-colors">
+<span class="material-symbols-outlined text-[18px]" data-icon="check_circle">check_circle</span> Completed
+                        </button>
+</div>
+</div>
+</div>
+</section>
+<!-- Task Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter">
+<!-- Task Card 1: Maintenance High Priority -->
+<div class="bg-white rounded-xl border border-outline-variant shadow-[0_4px_20px_rgba(0,0,0,0.04)] overflow-hidden flex flex-col">
+<div class="p-4 border-b border-outline-variant bg-surface-container-low flex justify-between items-start">
+<div>
+<h3 class="font-headline-sm text-headline-sm text-deep-navy">Penthouse A2</h3>
+<div class="flex items-center gap-1 text-on-surface-variant mt-1">
+<span class="material-symbols-outlined text-[16px]" data-icon="build">build</span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider">Maintenance</span>
+</div>
+</div>
+<span class="bg-error-container text-on-error-container px-2 py-1 rounded-md font-label-sm text-label-sm font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]" data-icon="priority_high" data-weight="fill">priority_high</span> High
+                    </span>
+</div>
+<div class="p-4 flex-grow">
+<p class="font-body-md text-body-md text-on-surface mb-4">HVAC system reporting critical failure in main living area.</p>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2 text-on-surface-variant">
+<span class="material-symbols-outlined text-[18px]" data-icon="schedule">schedule</span>
+<span class="font-label-lg text-label-lg">Due: 14:30 Today</span>
+</div>
+<div class="flex items-center gap-1 text-warning-amber">
+<span class="material-symbols-outlined text-[18px]" data-icon="pending">pending</span>
+<span class="font-label-sm text-label-sm">Pending</span>
+</div>
+</div>
+</div>
+<div class="p-4 bg-surface-bright border-t border-outline-variant">
+<button class="w-full py-3 bg-deep-navy text-white rounded-lg font-label-lg text-label-lg hover:opacity-90 transition-opacity active:scale-95">Start Task</button>
+</div>
+</div>
+<!-- Task Card 2: Cleaning Medium Priority -->
+<div class="bg-white rounded-xl border border-outline-variant shadow-[0_4px_20px_rgba(0,0,0,0.04)] overflow-hidden flex flex-col">
+<div class="p-4 border-b border-outline-variant bg-surface-container-low flex justify-between items-start">
+<div>
+<h3 class="font-headline-sm text-headline-sm text-deep-navy">Suite 405</h3>
+<div class="flex items-center gap-1 text-on-surface-variant mt-1">
+<span class="material-symbols-outlined text-[16px]" data-icon="cleaning_services">cleaning_services</span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider">Cleaning</span>
+</div>
+</div>
+<span class="bg-secondary-container text-on-secondary-container px-2 py-1 rounded-md font-label-sm text-label-sm font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]" data-icon="drag_handle">drag_handle</span> Medium
+                    </span>
+</div>
+<div class="p-4 flex-grow">
+<p class="font-body-md text-body-md text-on-surface mb-4">Standard checkout turn-over cleaning and linen replacement.</p>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2 text-on-surface-variant">
+<span class="material-symbols-outlined text-[18px]" data-icon="schedule">schedule</span>
+<span class="font-label-lg text-label-lg">Due: 16:00 Today</span>
+</div>
+<div class="flex items-center gap-1 text-deep-navy">
+<span class="material-symbols-outlined text-[18px]" data-icon="autorenew">autorenew</span>
+<span class="font-label-sm text-label-sm">In Progress</span>
+</div>
+</div>
+</div>
+<div class="p-4 bg-surface-bright border-t border-outline-variant">
+<button class="w-full py-3 border border-deep-navy text-deep-navy rounded-lg font-label-lg text-label-lg hover:bg-surface-container transition-colors active:scale-95">Complete Task</button>
+</div>
+</div>
+<!-- Task Card 3: Guest Service Low Priority -->
+<div class="bg-white rounded-xl border border-outline-variant shadow-[0_4px_20px_rgba(0,0,0,0.04)] overflow-hidden flex flex-col">
+<div class="p-4 border-b border-outline-variant bg-surface-container-low flex justify-between items-start">
+<div>
+<h3 class="font-headline-sm text-headline-sm text-deep-navy">Garden Loft 12</h3>
+<div class="flex items-center gap-1 text-on-surface-variant mt-1">
+<span class="material-symbols-outlined text-[16px]" data-icon="concierge">concierge</span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider">Guest Service</span>
+</div>
+</div>
+<span class="bg-surface-container-highest text-on-surface-variant px-2 py-1 rounded-md font-label-sm text-label-sm font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]" data-icon="keyboard_arrow_down">keyboard_arrow_down</span> Low
+                    </span>
+</div>
+<div class="p-4 flex-grow">
+<p class="font-body-md text-body-md text-on-surface mb-4">Delivery of specialized pillows and extra towel set for guest.</p>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2 text-on-surface-variant">
+<span class="material-symbols-outlined text-[18px]" data-icon="schedule">schedule</span>
+<span class="font-label-lg text-label-lg">Due: 18:00 Today</span>
+</div>
+<div class="flex items-center gap-1 text-success-green">
+<span class="material-symbols-outlined text-[18px]" data-icon="check_circle">check_circle</span>
+<span class="font-label-sm text-label-sm">Completed</span>
+</div>
+</div>
+</div>
+<div class="p-4 bg-surface-bright border-t border-outline-variant">
+<button class="w-full py-3 bg-surface-container-highest text-on-surface-variant rounded-lg font-label-lg text-label-lg cursor-not-allowed" disabled="">Finished</button>
+</div>
+</div>
+<!-- Task Card 4: Maintenance Medium Priority -->
+<div class="bg-white rounded-xl border border-outline-variant shadow-[0_4px_20px_rgba(0,0,0,0.04)] overflow-hidden flex flex-col">
+<div class="p-4 border-b border-outline-variant bg-surface-container-low flex justify-between items-start">
+<div>
+<h3 class="font-headline-sm text-headline-sm text-deep-navy">Unit 302</h3>
+<div class="flex items-center gap-1 text-on-surface-variant mt-1">
+<span class="material-symbols-outlined text-[16px]" data-icon="build">build</span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider">Maintenance</span>
+</div>
+</div>
+<span class="bg-secondary-container text-on-secondary-container px-2 py-1 rounded-md font-label-sm text-label-sm font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]" data-icon="drag_handle">drag_handle</span> Medium
+                    </span>
+</div>
+<div class="p-4 flex-grow">
+<p class="font-body-md text-body-md text-on-surface mb-4">Leaking faucet in secondary bathroom needs washer replacement.</p>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2 text-on-surface-variant">
+<span class="material-symbols-outlined text-[18px]" data-icon="schedule">schedule</span>
+<span class="font-label-lg text-label-lg">Due: 11:00 Tomorrow</span>
+</div>
+<div class="flex items-center gap-1 text-warning-amber">
+<span class="material-symbols-outlined text-[18px]" data-icon="pending">pending</span>
+<span class="font-label-sm text-label-sm">Pending</span>
+</div>
+</div>
+</div>
+<div class="p-4 bg-surface-bright border-t border-outline-variant">
+<button class="w-full py-3 bg-deep-navy text-white rounded-lg font-label-lg text-label-lg hover:opacity-90 transition-opacity active:scale-95">Start Task</button>
+</div>
+</div>
+</div>
+</main>
+<!-- Floating Action Button (FAB) -->
+<button class="fixed bottom-24 right-6 w-14 h-14 bg-antique-gold text-white rounded-full shadow-lg flex items-center justify-center hover:opacity-90 transition-all active:scale-90 z-50">
+<span class="material-symbols-outlined text-[28px]" data-icon="add">add</span>
+</button>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 py-2 pb-safe bg-surface-bright dark:bg-surface-dark border-t border-outline-variant dark:border-outline shadow-[0_-4px_20px_rgba(0,0,0,0.04)]">
+<a class="flex flex-col items-center justify-center text-deep-navy dark:text-antique-gold font-bold relative after:content-[''] after:absolute after:-bottom-1 after:w-1 after:h-1 after:bg-antique-gold after:rounded-full transition-transform duration-150 active:scale-95" href="#">
+<span class="material-symbols-outlined" data-icon="assignment">assignment</span>
+<span class="font-label-sm text-label-sm">Tasks</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline hover:opacity-80 transition-transform duration-150 active:scale-95" href="#">
+<span class="material-symbols-outlined" data-icon="calendar_today">calendar_today</span>
+<span class="font-label-sm text-label-sm">Schedule</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline hover:opacity-80 transition-transform duration-150 active:scale-95" href="#">
+<span class="material-symbols-outlined" data-icon="chat_bubble">chat_bubble</span>
+<span class="font-label-sm text-label-sm">Inbox</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline hover:opacity-80 transition-transform duration-150 active:scale-95" href="#">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-label-sm text-label-sm">Profile</span>
+</a>
+</nav>
+</body></html>

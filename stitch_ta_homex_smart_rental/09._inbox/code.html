@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Inbox | TA HomeX</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind Configuration -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "background": "#faf9fd",
+                        "outline-variant": "#c4c6cf",
+                        "on-tertiary-fixed-variant": "#6c391e",
+                        "on-surface-variant": "#43474e",
+                        "deep-navy": "#002349",
+                        "surface-container": "#eeedf1",
+                        "tertiary-fixed": "#ffdbcb",
+                        "on-primary-fixed-variant": "#2c476f",
+                        "secondary-fixed-dim": "#e9c176",
+                        "surface-container-high": "#e9e7eb",
+                        "on-error": "#ffffff",
+                        "surface-dark": "#0A111F",
+                        "surface-bright": "#faf9fd",
+                        "surface-container-low": "#f4f3f7",
+                        "surface": "#faf9fd",
+                        "surface-tint": "#455f88",
+                        "primary-fixed-dim": "#adc8f6",
+                        "warning-amber": "#F2994A",
+                        "secondary": "#775a19",
+                        "surface-container-lowest": "#ffffff",
+                        "on-surface": "#1a1c1e",
+                        "surface-container-highest": "#e3e2e6",
+                        "on-secondary-fixed-variant": "#5d4201",
+                        "secondary-container": "#fed488",
+                        "primary": "#000d22",
+                        "on-tertiary-fixed": "#341100",
+                        "inverse-primary": "#adc8f6",
+                        "surface-variant": "#e3e2e6",
+                        "on-tertiary": "#ffffff",
+                        "on-secondary-container": "#785a1a",
+                        "primary-fixed": "#d5e3ff",
+                        "antique-gold": "#C5A059",
+                        "on-secondary-fixed": "#261900",
+                        "on-primary": "#ffffff",
+                        "tertiary-fixed-dim": "#ffb692",
+                        "inverse-on-surface": "#f1f0f4",
+                        "on-background": "#1a1c1e",
+                        "surface-dim": "#dad9dd",
+                        "on-primary-container": "#718bb7",
+                        "tertiary": "#1e0700",
+                        "primary-container": "#002349",
+                        "on-error-container": "#93000a",
+                        "error": "#ba1a1a",
+                        "on-secondary": "#ffffff",
+                        "on-primary-fixed": "#001b3c",
+                        "secondary-fixed": "#ffdea5",
+                        "inverse-surface": "#2f3033",
+                        "success-green": "#27AE60",
+                        "outline": "#74777f",
+                        "error-container": "#ffdad6",
+                        "on-tertiary-container": "#bc7b5a",
+                        "tertiary-container": "#401701"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-desktop": "32px",
+                        "base": "8px",
+                        "stack-md": "16px",
+                        "stack-lg": "24px",
+                        "gutter": "16px",
+                        "stack-sm": "8px",
+                        "margin-mobile": "16px"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["Manrope"],
+                        "label-lg": ["Manrope"],
+                        "headline-sm": ["Manrope"],
+                        "display-lg": ["Manrope"],
+                        "headline-lg": ["Manrope"],
+                        "label-sm": ["Manrope"],
+                        "headline-md": ["Manrope"],
+                        "body-sm": ["Manrope"],
+                        "body-md": ["Manrope"]
+                    },
+                    "fontSize": {
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "label-lg": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                        "headline-sm": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                        "display-lg": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                        "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.04em", "fontWeight": "500"}],
+                        "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Manrope', sans-serif; }
+        .glass-header {
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background min-h-screen">
+<!-- TopAppBar -->
+<header class="flex justify-between items-center px-margin-mobile h-16 w-full sticky top-0 z-50 bg-surface glass-header">
+<div class="flex items-center gap-3">
+<img alt="TA HomeX Logo" class="h-10 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCH4vQvEeWhiWd3ysQThYAeeaKyThfmlEjTcS3vD-xv574_T4_7vi_Ai4w_nYQm1xwTsqkSE7Nbd_hZi4O8MzMGAzD2eex07irjI5Ay7_WiyLUW-irNOAS-Z0jDE6rT9sEno71TgmcwSmnwgimbI29VIO0bnRiYVtXZEnycF2hZhscQ8Rt2-VK8Xaaq2wnoNpFzxCB8riiyfmzOvAtdBYZZov7OUOv9ht-nk7VW8eQ89TW1TMSRlegRwNeV3yneYjmgyHGyWvW7IIE"/>
+<h1 class="font-display-lg text-headline-sm tracking-tight text-deep-navy">TA HomeX</h1>
+</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary" data-icon="notifications">notifications</span>
+<div class="w-8 h-8 rounded-full bg-surface-container-high overflow-hidden border border-outline-variant/30">
+<img alt="User Profile" class="w-full h-full object-cover" data-alt="A professional headshot of a young male executive in a well-lit modern office setting. He is wearing a dark navy suit and has a warm, confident expression. The background features blurred architectural elements of a luxury skyscraper. The lighting is soft and high-key, conveying a sense of premium hospitality and trust." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCCSWs9hBGszz3SFplcggCR8NlLBeQi5epUFMJ679H7oYajp2e8_goo5_e1ayHXwPHVhyam5-q6LTAHYTrVO91FWr9-FS7o0OE_K5xl-Eap-6oTnrQyt3iCPwtDsbyk9Pb_JusWyixhkOizP9duZf0k8AUT68JLxkoKkSsVcoPxcrF9-IGtG3GjZ68uBUdUoMCfk-4GR6ogRDJQ1RmY45ikaaRkqvpwm-ESgc9MLaqyfDXWiuhDK9lMu9d2iE7YCOrLqizVky4r7cU"/>
+</div>
+</div>
+</header>
+<main class="pb-24 max-w-screen-md mx-auto">
+<!-- Search Section -->
+<section class="px-margin-mobile py-4">
+<div class="relative group">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline" data-icon="search">search</span>
+<input class="w-full bg-surface-container-low border-none rounded-xl py-3 pl-12 pr-4 font-body-md text-on-surface focus:ring-2 focus:ring-antique-gold transition-all" placeholder="Search messages" type="text"/>
+</div>
+</section>
+<!-- Inbox List -->
+<section class="flex flex-col gap-px bg-outline-variant/10">
+<!-- Message Item: Support (Pinned/High Priority) -->
+<div class="bg-surface px-margin-mobile py-4 flex gap-4 items-center hover:bg-surface-container-low transition-colors cursor-pointer border-l-4 border-antique-gold">
+<div class="relative">
+<div class="w-14 h-14 rounded-full bg-primary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-antique-gold" data-icon="support_agent" style="font-variation-settings: 'FILL' 1;">support_agent</span>
+</div>
+<div class="absolute bottom-0 right-0 w-3.5 h-3.5 bg-success-green border-2 border-surface rounded-full"></div>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex justify-between items-baseline mb-0.5">
+<h3 class="font-label-lg text-primary truncate">TA HomeX Support</h3>
+<span class="font-label-sm text-antique-gold font-bold">10:45 AM</span>
+</div>
+<p class="font-body-sm text-on-surface-variant truncate font-semibold">Your maintenance request #492 has been completed.</p>
+</div>
+<div class="w-2.5 h-2.5 bg-antique-gold rounded-full"></div>
+</div>
+<!-- Message Item: Owner -->
+<div class="bg-surface px-margin-mobile py-4 flex gap-4 items-center hover:bg-surface-container-low transition-colors cursor-pointer">
+<div class="relative">
+<img alt="Mr. David Nguyen" class="w-14 h-14 rounded-full object-cover" data-alt="A close-up portrait of a friendly Southeast Asian man in his mid-40s, dressed in a clean white linen shirt. He is smiling warmly toward the camera in a sunny, tropical residential garden setting. The aesthetic is bright, airy, and high-end, matching a luxury property management app style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCBU4iaZi0FyNFnI7OrJTrdJG5hq7aJ2Py7jyE_vT9ZNmNUdKAEO9r4kq5kY-vigYbn59tviOeXNRNE-Q4S6cv8pVxpLrXC2S5ZeBW9F_mA1lEj-qX_7OASTyehoxUz9ji1AyEiz5UTyDqM0M1as-zW9FGhuh8LzGhPvvADDS9JTwYBhaWaGqjxHF7KWcFULXhT6u_Cb-RWzLLgnRjpUnfBReTtjwwG_US5tBzcvcrwyq3ns74Kht7QJOXOdvQ7fYn2Qr9g3u6QK0o"/>
+<div class="absolute bottom-0 right-0 w-3.5 h-3.5 bg-success-green border-2 border-surface rounded-full"></div>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex justify-between items-baseline mb-0.5">
+<h3 class="font-label-lg text-primary truncate">Mr. David Nguyen</h3>
+<span class="font-label-sm text-outline">Yesterday</span>
+</div>
+<p class="font-body-sm text-outline truncate">Thanks! See you soon at the lobby.</p>
+</div>
+</div>
+<!-- Message Item: Guest -->
+<div class="bg-surface px-margin-mobile py-4 flex gap-4 items-center hover:bg-surface-container-low transition-colors cursor-pointer">
+<div class="relative">
+<img alt="Emma Tran" class="w-14 h-14 rounded-full object-cover" data-alt="A sophisticated woman in a minimalist modern loft environment. She has a professional yet approachable look, wearing neutral tones. The background is softly blurred with floor-to-ceiling windows and high-end decor. The lighting is natural and creates a premium, high-tech residential atmosphere." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA7iMATosIly3CgKuOQvMQvqyZCmxaI3ploS7y-lZXr1vEf8TsCiBqq7z4pQW-Y_uakzHcZ1-fV-lD1RNmRwFlVGDD8ZRhmRawNPSKW6v57yJexnVdnsyN0bJ2ioOX1C1RDqN-1aHpgA9hdgEV0ThzYTdSp8eFs--UA32FjWDXQ5HqOXBY5NxKjQEDykRKy9pBptM-TyQngvI_n6z4m4FmTmOmtd-0yVOH4ZIJDvUfMmMmWzTzF-ygskJc8sumjQe1GAp-kYRUclrY"/>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex justify-between items-baseline mb-0.5">
+<h3 class="font-label-lg text-primary truncate">Emma Tran</h3>
+<span class="font-label-sm text-outline">12:15 PM</span>
+</div>
+<p class="font-body-sm text-on-surface-variant truncate font-semibold">Can I request an early check-in for tomorrow?</p>
+</div>
+<div class="w-2.5 h-2.5 bg-antique-gold rounded-full"></div>
+</div>
+<!-- Message Item: Staff -->
+<div class="bg-surface px-margin-mobile py-4 flex gap-4 items-center hover:bg-surface-container-low transition-colors cursor-pointer">
+<div class="relative">
+<img alt="James Smith" class="w-14 h-14 rounded-full object-cover" data-alt="A portrait of a male concierge staff member in a smart, dark-colored uniform. He looks professional and ready to assist, standing in a grand luxury apartment building lobby. The lighting is warm and dramatic, highlighting architectural details of the reception area. The overall feel is one of elite service and security." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC-CpHDC86QU5SzWP-e6iblt6WTMPN1y5-lVCqobgYluShR_dpFi-ZF8hwyR7wQvFVVc0HYO-nvibnleWNFf9lkFXQZgFsn09pVF5HD9Fhvy7Pqd5PGOKiWEBwcySxGU7n9wb-iNM0g05cM01rbiGoZ6xr5bIV1Tb7ndBIf5qg9cqDEu5ZQSdhSh2pLW6ePF5Qefrgi9y_aYTnEwsyrs557BHqv0OoMrsAYSmKQxY2ObQnl0SOmlbITHUQHkisdn1ny5HkROlYD9hY"/>
+<div class="absolute bottom-0 right-0 w-3.5 h-3.5 bg-outline-variant border-2 border-surface rounded-full"></div>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex justify-between items-baseline mb-0.5">
+<h3 class="font-label-lg text-primary truncate">James Smith</h3>
+<span class="font-label-sm text-outline">Yesterday</span>
+</div>
+<p class="font-body-sm text-outline truncate">The WiFi issue in Room 1205 has been resolved.</p>
+</div>
+</div>
+<!-- Message Item: Staff -->
+<div class="bg-surface px-margin-mobile py-4 flex gap-4 items-center hover:bg-surface-container-low transition-colors cursor-pointer">
+<div class="relative">
+<img alt="Sophia Le" class="w-14 h-14 rounded-full object-cover" data-alt="A portrait of a young professional woman in a bright, modern office space. She has a focused yet friendly expression. The room behind her is clean and minimalist with large windows. The image color palette is dominated by soft whites and cool navies, reflecting a high-tech corporate hospitality brand." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAz3RFyeYVA3aYW57uHugle3T2R18tX-v8dvqSQZ_-YjfYQz7LvYgTRp-uzBXJf4sL_Spo8rSe17Kh5tj7f3y_1SV2qQxp98t8nQ7wrQiza7F-BUUqmwLD7m7NZ3tH-_cKLxapqOQ02hPXWpt7TODrsAKmBFYX8rJ1idbyjikveM1bgyq1ExBcX6ZPgOcPbk1oOTYceWNJndom9OsBxwb-5IFI0kdL5DE0fTuLoRzy2Keb1NHuPm_AIKS7GxeNaRqTCflf8J1vyPQ4"/>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex justify-between items-baseline mb-0.5">
+<h3 class="font-label-lg text-primary truncate">Sophia Le</h3>
+<span class="font-label-sm text-outline">Wednesday</span>
+</div>
+<p class="font-body-sm text-outline truncate">Thank you so much for the feedback!</p>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-safe h-20 bg-surface/90 backdrop-blur-md shadow-lg rounded-t-xl border-t border-outline-variant/30">
+<!-- Home -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-all duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-label-sm text-[10px]">Home</span>
+</a>
+<!-- Search -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-all duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="search">search</span>
+<span class="font-label-sm text-[10px]">Search</span>
+</a>
+<!-- Bookings -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-all duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="calendar_month">calendar_month</span>
+<span class="font-label-sm text-[10px]">Bookings</span>
+</a>
+<!-- Inbox (Active) -->
+<a class="flex flex-col items-center justify-center text-deep-navy relative after:content-[''] after:w-1 after:h-1 after:bg-antique-gold after:rounded-full after:mt-1 scale-90 transition-all duration-200 ease-out" href="#">
+<span class="material-symbols-outlined" data-icon="chat_bubble" style="font-variation-settings: 'FILL' 1;">chat_bubble</span>
+<span class="font-label-sm text-[10px] font-bold">Inbox</span>
+</a>
+<!-- Profile -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-all duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-label-sm text-[10px]">Profile</span>
+</a>
+</nav>
+<!-- Floating Action Button -->
+<div class="fixed bottom-24 right-4 md:right-8 z-40">
+<button class="w-14 h-14 bg-deep-navy text-white rounded-full shadow-xl flex items-center justify-center active:scale-95 transition-transform">
+<span class="material-symbols-outlined" data-icon="edit_square">edit_square</span>
+</button>
+</div>
+</body></html>
