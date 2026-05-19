@@ -52,11 +52,11 @@ export default async function BookingDetailPage({ params }: { params: Promise<{ 
           </div>
           <div className="flex justify-between font-body-md text-on-surface-variant">
             <span>Cleaning fee</span>
-            <span className="text-deep-navy font-medium">300.000đ</span>
+            <span className="text-deep-navy font-medium">{(300000).toLocaleString('vi-VN')}đ</span>
           </div>
           <div className="flex justify-between font-body-md text-on-surface-variant">
             <span>Service fee</span>
-            <span className="text-deep-navy font-medium">200.000đ</span>
+            <span className="text-deep-navy font-medium">{(200000).toLocaleString('vi-VN')}đ</span>
           </div>
           <div className="border-t border-outline-variant/30 pt-4 flex justify-between items-center">
             <span className="font-headline-sm text-deep-navy">Total</span>
@@ -69,9 +69,9 @@ export default async function BookingDetailPage({ params }: { params: Promise<{ 
       <div className="fixed bottom-0 left-1/2 -translate-x-1/2 w-full max-w-[430px] bg-white border-t border-outline-variant/30 px-margin-mobile py-4 flex justify-center items-center z-50 pb-safe shadow-[0_-4px_20px_rgba(0,0,0,0.05)]">
         <Link 
           href={`/payment/${apartment.id}`} 
-          className="w-full text-center bg-deep-navy hover:bg-primary-container text-white py-4 rounded-xl font-headline-sm shadow-lg transition-colors"
+          className="w-full text-center bg-antique-gold hover:bg-secondary-container text-deep-navy py-4 rounded-xl font-headline-sm shadow-lg transition-colors"
         >
-          Proceed to Payment
+          Confirm & Pay
         </Link>
       </div>
     </div>

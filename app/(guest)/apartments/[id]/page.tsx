@@ -19,7 +19,7 @@ export default async function ApartmentDetailPage({ params }: { params: Promise<
         
         {/* Top bar over image */}
         <div className="absolute top-0 left-0 w-full px-margin-mobile pt-safe flex justify-between items-center h-20 z-20">
-          <Link href="/" className="w-10 h-10 flex items-center justify-center rounded-full bg-white/20 backdrop-blur-md text-white hover:bg-white/30 transition-colors shadow-sm">
+          <Link href="/search" className="w-10 h-10 flex items-center justify-center rounded-full bg-white/20 backdrop-blur-md text-white hover:bg-white/30 transition-colors shadow-sm">
             <span className="material-symbols-outlined">arrow_back</span>
           </Link>
           <button className="w-10 h-10 flex items-center justify-center rounded-full bg-white/20 backdrop-blur-md text-white hover:bg-white/30 transition-colors shadow-sm">
@@ -80,7 +80,7 @@ export default async function ApartmentDetailPage({ params }: { params: Promise<
       {/* Sticky Bottom Booking Bar */}
       <div className="fixed bottom-0 left-1/2 -translate-x-1/2 w-full max-w-[430px] bg-white border-t border-outline-variant/30 px-margin-mobile py-4 flex justify-between items-center z-50 pb-safe shadow-[0_-4px_20px_rgba(0,0,0,0.05)]">
         <div>
-          <p className="font-label-sm text-outline-variant uppercase">Price</p>
+          <p className="font-label-sm text-outline-variant uppercase tracking-wider text-[10px]">Per Night</p>
           <p className="font-headline-sm text-deep-navy">
             <span className="text-antique-gold font-bold">{apartment.pricePerNight.toLocaleString('vi-VN')}đ</span>
             <span className="text-sm font-normal text-on-surface-variant"> / night</span>
@@ -88,7 +88,7 @@ export default async function ApartmentDetailPage({ params }: { params: Promise<
         </div>
         <Link 
           href={`/booking/${apartment.id}`} 
-          className="bg-deep-navy hover:bg-primary-container text-white px-8 py-3.5 rounded-xl font-label-lg shadow-lg transition-colors"
+          className="bg-antique-gold hover:bg-secondary-container text-deep-navy px-8 py-3.5 rounded-xl font-headline-sm shadow-lg transition-colors"
         >
           Book Now
         </Link>

@@ -44,7 +44,7 @@ export default async function StaffTaskDetailPage({ params }: { params: Promise<
 
         {/* Guest Info */}
         <h3 className="font-headline-sm text-deep-navy mb-4">Current Guest</h3>
-        <Link href="/staff/guests/1" className="flex items-center justify-between bg-white p-4 rounded-3xl border border-outline-variant/30 shadow-sm transition-transform active:scale-[0.98] mb-8">
+        <Link href="/staff/guest/guest1" className="flex items-center justify-between bg-white p-4 rounded-3xl border border-outline-variant/30 shadow-sm transition-transform active:scale-[0.98] mb-8 hover:shadow-md hover:border-antique-gold/30">
            <div className="flex items-center gap-4">
               <div className="w-12 h-12 rounded-full bg-surface-container flex items-center justify-center text-deep-navy font-headline-sm">M</div>
               <div>

@@ -1,10 +1,11 @@
 import React from 'react';
+import Link from 'next/link';
 import GuestBottomNav from '@/components/layout/GuestBottomNav';
 import ApartmentCard from '@/components/apartment/ApartmentCard';
-import { mockApartments } from '@/data/mock-data';
+import { mockApartments, mockUsers } from '@/data/mock-data';
 
 export default function HomePage() {
-  const profileImage = 'https://lh3.googleusercontent.com/aida-public/AB6AXuAv9w9xjm16-ssw_5iH5LStPv26pl-eKi8p9Bj9nNsvfu6eyss1KkrKda9iV_FYg1-ZVfLeNnJzh5Y0FkyAmHDZXdDYanjHC5hkSziGOLOm6p6AqrSgw4yCPJzrWYri5KGYQiJZdMI-cZfcp7R391xB2z11FjWindahUEdz6JhqA8UOccdEEG0H8IwMYroYxpYzZUn9yHv-_-lnPV81HqHwiO2BubrLYdXkQ7IP34IRxF8tfZwQlblozNSqIEn0OhMnJLWZkZ6R4Dw';
+  const user = mockUsers['guest1'];
 
   return (
     <div className="bg-surface text-on-surface min-h-screen relative pb-28">
@@ -14,11 +15,11 @@ export default function HomePage() {
         <div className="flex justify-between items-center mb-6">
           <div className="flex items-center gap-3">
             <div className="w-12 h-12 rounded-full overflow-hidden shadow-sm border border-outline-variant/30">
-              <img src={profileImage} alt="Profile" className="w-full h-full object-cover" />
+              <img src={user.avatarUrl} alt="Profile" className="w-full h-full object-cover" />
             </div>
             <div>
               <p className="font-label-sm text-outline-variant">Good Morning,</p>
-              <h2 className="font-headline-sm text-deep-navy">Alex Nguyen</h2>
+              <h2 className="font-headline-sm text-deep-navy">{user.name}</h2>
             </div>
           </div>
           <button className="w-10 h-10 flex items-center justify-center rounded-full bg-surface-container hover:bg-surface-container-high transition-colors text-deep-navy relative">
@@ -37,9 +38,9 @@ export default function HomePage() {
             placeholder="Search destination, apartment..." 
             type="text" 
           />
-          <button className="absolute inset-y-0 right-2 w-10 h-10 my-auto flex items-center justify-center bg-deep-navy rounded-xl text-white shadow-md hover:bg-primary-container transition-colors">
+          <Link href="/search" className="absolute inset-y-0 right-2 w-10 h-10 my-auto flex items-center justify-center bg-deep-navy rounded-xl text-white shadow-md hover:bg-primary-container transition-colors">
             <span className="material-symbols-outlined text-[20px]">tune</span>
-          </button>
+          </Link>
         </div>
       </header>
 

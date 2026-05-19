@@ -8,7 +8,7 @@ export default async function GuestDetailPage({ params }: { params: Promise<{ id
 
   return (
     <div className="bg-surface text-on-surface min-h-screen pb-safe">
-      <TopAppBar title="Guest Profile" showBack backHref="/staff/tasks/t1" />
+      <TopAppBar title="Guest Profile" showBack backHref="/staff/tasks/1" />
 
       <main className="px-margin-mobile pt-6 pb-24">
         {/* Profile Header */}
@@ -66,7 +66,7 @@ export default async function GuestDetailPage({ params }: { params: Promise<{ id
       </main>
 
       {/* Bottom Action Bar */}
-      <div className="fixed bottom-0 left-0 w-full bg-white border-t border-outline-variant/30 px-margin-mobile py-4 flex justify-center items-center z-50 pb-safe">
+      <div className="fixed bottom-0 left-1/2 -translate-x-1/2 w-full max-w-[430px] bg-white border-t border-outline-variant/30 px-margin-mobile py-4 flex justify-center items-center z-50 pb-safe shadow-[0_-4px_20px_rgba(0,0,0,0.05)]">
          <button className="w-full bg-antique-gold text-deep-navy py-4 rounded-xl font-headline-sm shadow-lg hover:bg-secondary-fixed transition-colors flex justify-center items-center gap-2">
            <span className="material-symbols-outlined">chat</span>
            Message Guest
