@@ -1,123 +1,266 @@
 import React from 'react';
 import Link from 'next/link';
-import TopAppBar from '@/components/layout/TopAppBar';
 import GuestBottomNav from '@/components/layout/GuestBottomNav';
 import { mockUsers } from '@/data/mock-data';
+
+const LOGO_URL =
+  'https://lh3.googleusercontent.com/aida-public/AB6AXuCH4vQvEeWhiWd3ysQThYAeeaKyThfmlEjTcS3vD-xv574_T4_7vi_Ai4w_nYQm1xwTsqkSE7Nbd_hZi4O8MzMGAzD2eex07irjI5Ay7_WiyLUW-irNOAS-Z0jDE6rT9sEno71TgmcwSmnwgimbI29VIO0bnRiYVtXZEnycF2hZhscQ8Rt2-VK8Xaaq2wnoNpFzxCB8riiyfmzOvAtdBYZZov7OUOv9ht-nk7VW8eQ89TW1TMSRlegRwNeV3yneYjmgyHGyWvW7IIE';
+
+interface MenuItem {
+  icon: string;
+  label: string;
+  description: string;
+  href: string;
+  danger?: boolean;
+}
+
+const menuItems: MenuItem[] = [
+  {
+    icon: 'person',
+    label: 'Personal Information',
+    description: 'Update your details and contact info',
+    href: '#',
+  },
+  {
+    icon: 'payments',
+    label: 'Payment Methods',
+    description: 'Manage your saved cards and billing',
+    href: '#',
+  },
+  {
+    icon: 'star',
+    label: 'My Reviews',
+    description: 'View and manage your stay reviews',
+    href: '#',
+  },
+  {
+    icon: 'help_center',
+    label: 'Support Center',
+    description: 'FAQs, support chat, and user guides',
+    href: '#',
+  },
+  {
+    icon: 'settings',
+    label: 'Settings',
+    description: 'App preferences and notifications',
+    href: '#',
+  },
+];
+
+const demoRoles = [
+  {
+    icon: 'real_estate_agent',
+    label: 'Owner Dashboard',
+    description: 'Manage properties & revenue',
+    href: '/owner/dashboard',
+  },
+  {
+    icon: 'engineering',
+    label: 'Staff Dashboard',
+    description: 'View tasks & guest details',
+    href: '/staff/dashboard',
+  },
+];
 
 export default function ProfilePage() {
   const user = mockUsers['guest1'];
 
   return (
-    <div className="bg-surface text-on-surface min-h-screen relative">
-      {/* Curved Header Background */}
-      <div className="absolute top-0 left-0 w-full h-52 bg-deep-navy rounded-b-[40px] z-0" />
+    <div className="bg-background text-on-surface min-h-screen pb-32">
+      {/* Top AppBar */}
+      <header className="bg-white sticky top-0 z-50 flex justify-between items-center px-margin-mobile h-16 w-full border-b border-outline-variant/20 shadow-xs">
+        <div className="flex items-center gap-3">
+          <img alt="TA HomeX Logo" className="h-8 w-auto object-contain" src={LOGO_URL} />
+          <span className="text-base font-extrabold uppercase tracking-tight text-deep-navy">
+            TA HomeX
+          </span>
+        </div>
+        <div className="flex items-center gap-3">
+          <button className="relative p-1.5 rounded-full hover:bg-surface-container-low transition-colors active:scale-95">
+            <span className="material-symbols-outlined text-deep-navy">notifications</span>
+            <span className="absolute top-2 right-2 w-2 h-2 bg-error rounded-full" />
+          </button>
+          <div className="w-9 h-9 rounded-full border-2 border-antique-gold p-0.5 overflow-hidden">
+            <img
+              className="w-full h-full object-cover rounded-full"
+              src={user.avatarUrl}
+              alt="Profile"
+            />
+          </div>
+        </div>
+      </header>
 
-      <div className="relative z-10">
-        <TopAppBar title="Profile" />
-
-        <main className="px-margin-mobile pt-8 pb-28">
-          {/* Profile Header */}
-          <div className="flex flex-col items-center mb-8">
-            <div className="w-28 h-28 rounded-full border-4 border-white overflow-hidden mb-4 relative shadow-lg bg-white">
-              <img src={user.avatarUrl} alt="Profile" className="w-full h-full object-cover" />
+      <main className="px-margin-mobile py-6 space-y-6">
+        {/* Profile Hero Card */}
+        <section className="bg-white rounded-3xl p-5 border border-outline-variant/30 shadow-sm flex flex-col items-center gap-5 text-center">
+          {/* Avatar + Gold Member Badge */}
+          <div className="relative mt-2">
+            <div className="w-24 h-24 rounded-2xl overflow-hidden shadow-md border-4 border-white ring-2 ring-antique-gold/30">
+              <img
+                className="w-full h-full object-cover"
+                src={user.avatarUrl}
+                alt={user.name}
+              />
             </div>
-            <h2 className="font-headline-md text-deep-navy">{user.name}</h2>
-            <p className="font-body-sm text-on-surface-variant bg-white px-3 py-1 rounded-full shadow-sm mt-1 border border-outline-variant/30">
+            <div className="absolute -bottom-3 left-1/2 -translate-x-1/2 bg-antique-gold text-deep-navy px-3 py-0.5 rounded-full flex items-center gap-1 shadow-md whitespace-nowrap">
+              <span
+                className="material-symbols-outlined text-xs"
+                style={{ fontVariationSettings: "'FILL' 1" }}
+              >
+                stars
+              </span>
+              <span className="text-[10px] font-extrabold uppercase tracking-wider">
+                Gold Member
+              </span>
+            </div>
+          </div>
+
+          <div className="pt-3">
+            <h1 className="text-xl font-extrabold text-deep-navy">{user.name}</h1>
+            <p className="text-xs text-on-surface-variant font-medium flex items-center justify-center gap-1 mt-1">
+              <span className="material-symbols-outlined text-sm">verified_user</span>
               {user.email}
             </p>
           </div>
 
-          {/* Account Section */}
-          <p className="font-label-sm text-outline-variant uppercase tracking-widest text-[10px] mb-3 px-1">Account</p>
-          <div className="space-y-3 mb-6">
-            <div className="flex items-center justify-between bg-white p-4 rounded-2xl shadow-sm border border-outline-variant/30">
+          <button className="bg-antique-gold hover:bg-deep-navy hover:text-white text-deep-navy font-bold text-sm px-6 py-2.5 rounded-xl shadow-sm active:scale-95 transition-all duration-200 flex items-center gap-2">
+            <span className="material-symbols-outlined text-base">edit</span>
+            Edit Profile
+          </button>
+        </section>
+
+        {/* Membership Stats */}
+        <section className="bg-white rounded-3xl p-5 border border-outline-variant/30 shadow-sm">
+          <h2 className="text-base font-bold text-deep-navy mb-4">Membership Stats</h2>
+          <div className="space-y-3">
+            <div className="flex items-center justify-between text-sm">
+              <span className="text-on-surface-variant font-medium">Stayed Nights</span>
+              <span className="font-extrabold text-deep-navy">24</span>
+            </div>
+            <div className="w-full bg-surface-container rounded-full h-2 overflow-hidden">
+              <div className="bg-antique-gold h-full rounded-full" style={{ width: '75%' }} />
+            </div>
+            <p className="text-xs text-on-surface-variant">
+              6 more nights to reach{' '}
+              <span className="text-antique-gold font-bold">Platinum</span> status.
+            </p>
+          </div>
+        </section>
+
+        {/* Account Settings Menu */}
+        <section className="bg-white rounded-3xl border border-outline-variant/30 shadow-sm overflow-hidden">
+          <div className="px-5 py-4 border-b border-outline-variant/20">
+            <h2 className="text-base font-bold text-deep-navy">Account Settings</h2>
+          </div>
+          <nav className="divide-y divide-outline-variant/10">
+            {menuItems.map((item) => (
+              <a
+                key={item.label}
+                href={item.href}
+                className="flex items-center justify-between px-5 py-4 hover:bg-surface-container-low transition-colors group active:bg-surface-container"
+              >
+                <div className="flex items-center gap-4">
+                  <div className="w-10 h-10 rounded-xl bg-deep-navy/5 flex items-center justify-center text-deep-navy group-hover:bg-antique-gold/10 group-hover:text-antique-gold transition-colors">
+                    <span className="material-symbols-outlined text-xl">{item.icon}</span>
+                  </div>
+                  <div>
+                    <p className="text-sm font-bold text-on-surface">{item.label}</p>
+                    <p className="text-xs text-on-surface-variant mt-0.5">{item.description}</p>
+                  </div>
+                </div>
+                <span className="material-symbols-outlined text-outline-variant group-hover:text-antique-gold transition-colors">
+                  chevron_right
+                </span>
+              </a>
+            ))}
+
+            {/* Logout */}
+            <Link
+              href="/login"
+              className="flex items-center justify-between px-5 py-4 hover:bg-error-container/20 transition-colors group active:bg-error/5"
+            >
               <div className="flex items-center gap-4">
-                <div className="w-10 h-10 rounded-full bg-antique-gold/10 flex items-center justify-center text-antique-gold">
-                  <span className="material-symbols-outlined">person</span>
+                <div className="w-10 h-10 rounded-xl bg-error/10 flex items-center justify-center text-error">
+                  <span className="material-symbols-outlined text-xl">logout</span>
                 </div>
                 <div>
-                  <p className="font-label-lg text-deep-navy">{user.name}</p>
-                  <p className="font-body-sm text-on-surface-variant">{user.phone}</p>
+                  <p className="text-sm font-bold text-error">Log Out</p>
+                  <p className="text-xs text-error/60 mt-0.5">Sign out of your account</p>
                 </div>
               </div>
-              <span className="font-label-sm text-antique-gold bg-antique-gold/10 px-2 py-1 rounded-lg">Guest</span>
-            </div>
-
-            <Link
-              href="/smart-home"
-              className="flex items-center justify-between bg-white p-4 rounded-2xl shadow-sm border border-outline-variant/30 active:scale-[0.98] transition-transform hover:shadow-md hover:border-antique-gold/50 group"
-            >
-              <div className="flex items-center gap-4">
-                <div className="w-10 h-10 rounded-full bg-antique-gold/10 flex items-center justify-center text-antique-gold">
-                  <span className="material-symbols-outlined">home_iot_device</span>
-                </div>
-                <span className="font-label-lg text-deep-navy">Smart Home Controls</span>
-              </div>
-              <span className="material-symbols-outlined text-outline-variant group-hover:text-antique-gold transition-colors">chevron_right</span>
+              <span className="material-symbols-outlined text-error/30 group-hover:text-error transition-colors">
+                logout
+              </span>
             </Link>
+          </nav>
+        </section>
 
-            <Link
-              href="/bookings"
-              className="flex items-center justify-between bg-white p-4 rounded-2xl shadow-sm border border-outline-variant/30 active:scale-[0.98] transition-transform hover:shadow-md hover:border-antique-gold/50 group"
-            >
-              <div className="flex items-center gap-4">
-                <div className="w-10 h-10 rounded-full bg-antique-gold/10 flex items-center justify-center text-antique-gold">
-                  <span className="material-symbols-outlined">receipt_long</span>
-                </div>
-                <span className="font-label-lg text-deep-navy">My Bookings</span>
-              </div>
-              <span className="material-symbols-outlined text-outline-variant group-hover:text-antique-gold transition-colors">chevron_right</span>
-            </Link>
-          </div>
-
-          {/* Switch Role Section */}
-          <p className="font-label-sm text-outline-variant uppercase tracking-widest text-[10px] mb-3 px-1">Demo Roles</p>
-          <div className="space-y-3 mb-6">
+        {/* Become an Owner Card */}
+        <section className="relative bg-deep-navy text-white rounded-3xl overflow-hidden p-6 shadow-md">
+          <div className="absolute top-0 right-0 w-32 h-32 bg-antique-gold/10 rounded-full -mr-16 -mt-16 blur-2xl pointer-events-none" />
+          <div className="relative z-10">
+            <span className="bg-antique-gold/20 text-antique-gold px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest mb-3 inline-block">
+              Partner with us
+            </span>
+            <h3 className="text-lg font-extrabold mb-2">Become an Owner</h3>
+            <p className="text-sm text-white/70 mb-4 leading-relaxed">
+              List your property and earn passive income with our smart management system.
+            </p>
             <Link
               href="/owner/dashboard"
-              className="flex items-center justify-between bg-surface-container-low p-4 rounded-2xl border border-outline-variant/50 active:scale-[0.98] transition-transform hover:bg-surface-container group"
+              className="inline-flex items-center gap-2 text-antique-gold font-bold text-sm hover:gap-3 transition-all"
             >
-              <div className="flex items-center gap-4">
-                <div className="w-10 h-10 rounded-full bg-deep-navy/10 flex items-center justify-center text-deep-navy">
-                  <span className="material-symbols-outlined">real_estate_agent</span>
-                </div>
-                <div>
-                  <p className="font-label-lg text-deep-navy">Owner Dashboard</p>
-                  <p className="font-body-sm text-on-surface-variant">Manage properties & revenue</p>
-                </div>
-              </div>
-              <span className="material-symbols-outlined text-outline-variant group-hover:text-deep-navy transition-colors">chevron_right</span>
-            </Link>
-
-            <Link
-              href="/staff/dashboard"
-              className="flex items-center justify-between bg-surface-container-low p-4 rounded-2xl border border-outline-variant/50 active:scale-[0.98] transition-transform hover:bg-surface-container group"
-            >
-              <div className="flex items-center gap-4">
-                <div className="w-10 h-10 rounded-full bg-deep-navy/10 flex items-center justify-center text-deep-navy">
-                  <span className="material-symbols-outlined">engineering</span>
-                </div>
-                <div>
-                  <p className="font-label-lg text-deep-navy">Staff Dashboard</p>
-                  <p className="font-body-sm text-on-surface-variant">View tasks & guest details</p>
-                </div>
-              </div>
-              <span className="material-symbols-outlined text-outline-variant group-hover:text-deep-navy transition-colors">chevron_right</span>
+              Learn more
+              <span className="material-symbols-outlined text-base">arrow_forward</span>
             </Link>
           </div>
+          <div className="absolute bottom-4 right-6 opacity-20">
+            <span
+              className="material-symbols-outlined text-8xl"
+              style={{ fontVariationSettings: "'FILL' 1" }}
+            >
+              real_estate_agent
+            </span>
+          </div>
+        </section>
 
-          {/* Sign Out */}
-          <Link
-            href="/login"
-            className="flex items-center gap-4 bg-error/5 p-4 rounded-2xl border border-error/20 active:scale-[0.98] transition-transform hover:bg-error/10"
-          >
-            <div className="w-10 h-10 rounded-full bg-error/10 flex items-center justify-center text-error">
-              <span className="material-symbols-outlined">logout</span>
-            </div>
-            <span className="font-label-lg text-error">Sign Out</span>
-          </Link>
-        </main>
-      </div>
+        {/* Demo Role Switcher */}
+        <section className="bg-white rounded-3xl border border-outline-variant/30 shadow-sm overflow-hidden">
+          <div className="px-5 py-4 border-b border-outline-variant/20">
+            <h2 className="text-xs font-bold text-on-surface-variant/60 uppercase tracking-widest">
+              Demo Roles
+            </h2>
+          </div>
+          <div className="divide-y divide-outline-variant/10">
+            {demoRoles.map((role) => (
+              <Link
+                key={role.label}
+                href={role.href}
+                className="flex items-center justify-between px-5 py-4 hover:bg-surface-container-low transition-colors group active:bg-surface-container"
+              >
+                <div className="flex items-center gap-4">
+                  <div className="w-10 h-10 rounded-xl bg-deep-navy/5 flex items-center justify-center text-deep-navy">
+                    <span className="material-symbols-outlined text-xl">{role.icon}</span>
+                  </div>
+                  <div>
+                    <p className="text-sm font-bold text-on-surface">{role.label}</p>
+                    <p className="text-xs text-on-surface-variant mt-0.5">{role.description}</p>
+                  </div>
+                </div>
+                <span className="material-symbols-outlined text-outline-variant group-hover:text-deep-navy transition-colors">
+                  chevron_right
+                </span>
+              </Link>
+            ))}
+          </div>
+        </section>
+
+        {/* App Info */}
+        <div className="text-center pb-2">
+          <p className="text-[10px] text-outline-variant font-medium">TA HomeX v2.4.1 (Stable)</p>
+          <p className="text-[10px] text-outline-variant font-medium">© 2024 Luxury Smart Hospitality</p>
+        </div>
+      </main>
 
       <GuestBottomNav />
     </div>
